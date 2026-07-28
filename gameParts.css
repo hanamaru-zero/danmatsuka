@@ -1,0 +1,290 @@
+/* ==========================================
+   断末蚊
+   gameParts.css
+========================================== */
+
+
+/* ==========================================
+   スコア
+========================================== */
+
+#score{
+    position:absolute;
+    top:10px;
+    left:10px;
+    z-index:10;
+    font-size:20px;
+    font-weight:bold;
+    color:white;
+    text-shadow:
+        1px 1px 2px #000,
+        -1px -1px 2px #000;
+}
+
+
+/* ==========================================
+   かゆみ耐性
+========================================== */
+
+#damage{
+    position:absolute;
+    top:40px;
+    left:10px;
+    z-index:10;
+    font-size:20px;
+    font-weight:bold;
+    color:white;
+    text-shadow:
+        1px 1px 2px #000,
+        -1px -1px 2px #000;
+}
+
+
+.heart{
+    color:red;
+}
+
+
+/* ==========================================
+   蚊
+========================================== */
+
+.mosquito{
+    position:absolute;
+    z-index:30;
+    font-size:32px;
+    user-select:none;
+    cursor:pointer;
+    transform-origin:center;
+}
+
+
+/* 蚊画像 */
+.mosquitoImage{
+    width:80px;
+    height:80px;
+    display:block;
+    pointer-events:none;
+    object-fit:contain;
+    user-select:none;
+    filter:
+        drop-shadow(0 0 3px white);
+}
+
+
+/* 赤蚊 */
+.mosquitoImage.RED{
+    filter:
+        drop-shadow(0 0 3px white)
+        drop-shadow(0 0 8px red)
+        brightness(1.2)
+        saturate(1.8);
+}
+
+
+/* 吸血中 */
+.mosquitoImage.sucking{
+    animation:
+        mosquitoSucking 0.4s infinite;
+}
+
+
+@keyframes mosquitoSucking{
+
+    0%{
+        opacity:1;
+    }
+
+    50%{
+        opacity:0.35;
+    }
+
+    100%{
+        opacity:1;
+    }
+
+}
+
+
+/* ==========================================
+   撃破衝撃波
+========================================== */
+
+.hitEffect{
+
+    position:absolute;
+
+    width:24px;
+    height:24px;
+
+    border:4px solid white;
+
+    border-radius:50%;
+
+    z-index:45;
+
+    pointer-events:none;
+
+    box-shadow:
+        0 0 8px white,
+        0 0 15px rgba(255,255,255,0.8);
+
+    transform:
+        translate(-50%,-50%)
+        scale(0.2);
+
+    animation:
+        hitWave 0.25s ease-out forwards;
+
+}
+
+
+.hitEffect::before{
+
+    content:"";
+
+    position:absolute;
+
+    left:50%;
+    top:50%;
+
+    width:10px;
+    height:10px;
+
+    background:white;
+
+    border-radius:50%;
+
+    transform:
+        translate(-50%,-50%);
+
+    animation:
+        hitFlash 0.15s ease-out forwards;
+
+}
+
+
+
+@keyframes hitWave{
+
+    0%{
+
+        opacity:1;
+
+        transform:
+            translate(-50%,-50%)
+            scale(0.2);
+
+    }
+
+
+    50%{
+
+        opacity:1;
+
+        transform:
+            translate(-50%,-50%)
+            scale(2);
+
+    }
+
+
+    100%{
+
+        opacity:0;
+
+        transform:
+            translate(-50%,-50%)
+            scale(4.5);
+
+    }
+
+}
+
+
+
+@keyframes hitFlash{
+
+    0%{
+
+        opacity:1;
+
+        transform:
+            translate(-50%,-50%)
+            scale(1);
+
+    }
+
+
+    100%{
+
+        opacity:0;
+
+        transform:
+            translate(-50%,-50%)
+            scale(3);
+
+    }
+
+}
+
+
+/* ==========================================
+   吹き出し
+========================================== */
+
+.dialogue{
+    position:absolute;
+    display:none;
+    z-index:40;
+    pointer-events:none;
+    font-size:16px;
+    font-weight:bold;
+    white-space:nowrap;
+    color:#222;
+    background:rgba(255,255,255,0.9);
+    border:1px solid #444;
+    border-radius:12px;
+    padding:4px 8px;
+    transform-origin:center bottom;
+}
+
+
+/* ==========================================
+   セリフ履歴
+========================================== */
+
+#dialogueHistory{
+    position:absolute;
+    left:0;
+    bottom:0;
+    width:100%;
+    height:160px;
+    z-index:50;
+    overflow:hidden;
+    padding:8px;
+    box-sizing:border-box;
+    text-align:left;
+    background:rgba(255,255,255,0.65);
+    pointer-events:none;
+}
+
+
+.historyLine{
+    font-size:14px;
+    font-weight:bold;
+    line-height:20px;
+    white-space:nowrap;
+}
+
+
+.historyName{
+    display:inline-block;
+    width:60px;
+    font-weight:bold;
+}
+
+
+.historyText{
+    display:inline-block;
+}

@@ -1,0 +1,177 @@
+// ==========================================
+// 断末蚊
+// staffRoll.js
+// ==========================================
+
+let staffRollStarted=false;
+
+
+// スタッフロールデータ
+
+const STAFF_ROLL_DATA=[
+    {text:"断末蚊"},
+    {text:""},
+
+    {text:"制作"},
+    {text:"花丸　史"},
+
+    {text:""},
+
+    {text:"プログラミング"},
+    {text:"ChatGPT"},
+
+    {text:""},
+
+    {text:"素材提供"},
+
+    {text:""},
+
+    {text:"蚊画像素材"},
+    {text:"PNGTree 様"},
+
+    {text:""},
+
+    {text:"背景素材"},
+    {text:"copainter team 様"},
+
+    {text:""},
+
+    {text:"テストプレイ協力"},
+    {text:"プレイヤーA"},
+    {text:"プレイヤーB"},
+    {text:"プレイヤーC"},
+
+    {text:""},
+
+    {text:"セリフパターン協力"},
+    {text:"プレイヤーX"},
+    {text:"プレイヤーY"},
+    {text:"プレイヤーZ"},
+
+    {text:""},
+
+    {text:"スポンサー様"},
+    {text:"広告募集中"},
+    {text:"蚊帳メーカー様、大歓迎"},
+    {text:"蚊取り線香メーカー様、大歓迎"},
+    {text:"※広告掲載後も吸血活動は継続します"},
+
+    {text:""},
+
+    {text:"THANK YOU FOR PLAYING"}
+];
+
+
+// ランダム１文字赤文字化
+function randomDangerText(text){
+
+    const indexes=[];
+
+
+    for(let i=0;i<text.length;i++){
+
+        if(
+            text[i]!==" " &&
+            text[i]!=="　"
+        ){
+
+            indexes.push(i);
+
+        }
+
+    }
+
+
+    if(indexes.length===0){
+        return text;
+    }
+
+
+    const target=
+        indexes[
+            Math.floor(Math.random()*indexes.length)
+        ];
+
+
+    let result="";
+
+
+    for(let i=0;i<text.length;i++){
+
+        if(i===target){
+
+            result+=
+            `<span class="staffDanger">${text[i]}</span>`;
+
+        }
+        else{
+
+            result+=text[i];
+
+        }
+
+    }
+
+
+    return result;
+
+}
+
+
+
+// スタッフロール初期化
+function resetStaffRoll(){
+
+    staffRollStarted=false;
+
+    const roll=document.getElementById("staffRoll");
+
+    if(roll){
+        roll.innerHTML="";
+        roll.style.display="none";
+    }
+
+}
+
+
+
+// スタッフロール開始
+function startStaffRoll(){
+
+    if(staffRollStarted){
+        return;
+    }
+
+    staffRollStarted=true;
+
+
+    const roll=document.getElementById("staffRoll");
+
+    if(!roll){
+        return;
+    }
+
+
+    let html="";
+
+
+    STAFF_ROLL_DATA.forEach(item=>{
+
+        html+=
+            randomDangerText(item.text)
+            +"<br>";
+
+    });
+
+
+    roll.innerHTML=
+    `
+    <div class="staffText">
+        ${html}
+    </div>
+    `;
+
+
+    roll.style.display="block";
+
+}
