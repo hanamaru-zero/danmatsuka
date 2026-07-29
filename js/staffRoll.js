@@ -23,20 +23,16 @@ const STAFF_ROLL_DATA=[
     {text:""},
 
     {text:"素材提供"},
-
-    {text:""},
-
     {text:"蚊画像素材"},
     {text:"PNGTree 様"},
-
-    {text:""},
-
     {text:"背景素材"},
     {text:"copainter team 様"},
 
     {text:""},
 
     {text:"テストプレイ協力"},
+    {text:"バクの好物　マスター"},
+    {text:"居酒屋しょうき　マスター"},
     {text:"プレイヤーA"},
     {text:"プレイヤーB"},
     {text:"プレイヤーC"},
@@ -44,6 +40,7 @@ const STAFF_ROLL_DATA=[
     {text:""},
 
     {text:"セリフパターン協力"},
+    {text:"バクの好物　マスター"},
     {text:"プレイヤーX"},
     {text:"プレイヤーY"},
     {text:"プレイヤーZ"},
