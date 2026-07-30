@@ -106,6 +106,9 @@ function evadeMosquito(mosquito){
 // 撃破処理
 function killMosquito(mosquito){
 
+    playSE("destroy");
+
+
     showMosquitoDialogue(
         mosquito,
         "destroy"

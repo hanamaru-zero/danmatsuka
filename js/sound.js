@@ -3,30 +3,25 @@
 // sound.js
 // ==========================================
 
-
 let soundEnabled=true;
 
 
 // 音設定
 const SOUND_SETTINGS={
-
     destroy:
-        "sound/destroy.mp3",
+        "sound/mosquito_hit.mp3",
 
     click:
         "sound/click.mp3",
 
     bgm:
         "sound/bgm.mp3"
-
 };
 
 
 // 音初期化
 function initSound(){
-
     updateSoundButton();
-
 }
 
 
@@ -35,7 +30,6 @@ function toggleSound(){
 
     soundEnabled=
         !soundEnabled;
-
 
     updateSoundButton();
 
@@ -50,20 +44,15 @@ function updateSoundButton(){
             "soundButton"
         );
 
-
     if(!button){
         return;
     }
 
 
     if(soundEnabled){
-
         button.textContent="🔊";
-
     }else{
-
         button.textContent="🔇";
-
     }
 
 }
@@ -87,9 +76,7 @@ function playSE(name){
 
 
     const audio=
-        new Audio(
-            path
-        );
+        new Audio(path);
 
 
     audio.play()
