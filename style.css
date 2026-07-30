@@ -191,6 +191,8 @@ h1{
 /* 共通ゲームボタン */
 
 .gameButton{
+    appearance:none;
+    -webkit-appearance:none;
     font-family:"ZenMaru",sans-serif;
     font-size:32px;
     font-weight:bold;
@@ -205,6 +207,7 @@ h1{
         2px 2px 3px #000,
         -2px -2px 3px #000;
     touch-action:none;
+    cursor:pointer;
 }
 
 
