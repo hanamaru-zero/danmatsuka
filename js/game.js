@@ -397,6 +397,8 @@ function startGame(){
 
     initPlayerInput();
 
+    initSound();
+
     if(gameState===GAME_STATE.PLAYING){
 
         showGameUI();

@@ -11,6 +11,28 @@ function initPlayerInput(){
         document.getElementById("gameArea");
 
 
+    const soundButton=
+        document.getElementById(
+            "soundButton"
+        );
+
+
+    if(soundButton){
+
+        soundButton.addEventListener(
+            "pointerdown",
+            function(event){
+
+                event.stopPropagation();
+
+                toggleSound();
+
+            }
+        );
+
+    }
+
+
     gameArea.addEventListener(
         "pointerdown",
         function(event){
@@ -18,8 +40,10 @@ function initPlayerInput(){
             const rect=
                 gameArea.getBoundingClientRect();
 
+
             const x=
                 event.clientX-rect.left;
+
 
             const y=
                 event.clientY-rect.top;
@@ -46,6 +70,7 @@ function onPlayerTap(x,y){
     if(gameState===GAME_STATE.TITLE){
 
         checkTitleTap(x,y);
+
         return;
 
     }
