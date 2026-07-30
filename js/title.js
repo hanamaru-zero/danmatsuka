@@ -55,12 +55,27 @@ function drawTitle(){
 
     <div class="titleButtonArea">
 
-        <button class="gameButton">
+        <button class="gameButton"
+                type="button">
             スタート
         </button>
 
     </div>
     `;
+
+
+    const startButton=
+        document.querySelector(
+            ".gameButton"
+        );
+
+
+    if(startButton){
+
+        startButton.onclick=
+            startGamePlay;
+
+    }
 
 
     updateTitleCursor();
@@ -167,7 +182,6 @@ function checkTitleTap(x,y){
         ".difficultyItem"
     ).forEach((item,index)=>{
 
-
         const rect=
             getRelativeRect(
                 item,
@@ -194,7 +208,7 @@ function checkTitleTap(x,y){
 
     const start=
         document.querySelector(
-            ".titleStart"
+            ".gameButton"
         );
 
 
@@ -213,7 +227,7 @@ function checkTitleTap(x,y){
     if(
         isPointInsideRect(
             x,
-            y,
+        y,
             startRect
         )
     ){
