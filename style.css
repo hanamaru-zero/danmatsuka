@@ -219,6 +219,11 @@ h1{
 }
 
 
+.titleStart:active{
+    transform:scale(0.95);
+}
+
+
 .titleOption{
     display:none;
 }
