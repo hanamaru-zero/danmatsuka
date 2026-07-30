@@ -3,7 +3,7 @@
 // sound.js
 // ==========================================
 
-let soundEnabled=true;
+let soundEnabled=false;
 
 
 // 音設定
