@@ -56,7 +56,7 @@ function drawTitle(){
     <div class="titleButtonArea">
 
         <button class="titleStart">
-            START
+            スタート
         </button>
 
     </div>
