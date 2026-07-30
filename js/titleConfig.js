@@ -4,6 +4,11 @@
 // ==========================================
 
 
+let selectedDifficulty="NORMAL";
+
+let titleCursorIndex=1;
+
+
 const TITLE_CONFIG={
 
     EASY:{
@@ -30,3 +35,12 @@ const TITLE_CONFIG={
     }
 
 };
+
+
+const TITLE_DIFFICULTY_LIST=[
+
+    "EASY",
+    "NORMAL",
+    "HARD"
+
+];

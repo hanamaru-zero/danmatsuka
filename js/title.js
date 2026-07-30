@@ -3,12 +3,6 @@
 // title.js
 // ==========================================
 
-// 選択中難易度
-let selectedDifficulty="NORMAL";
-
-// 難易度カーソル位置
-let titleCursorIndex=1;
-
 
 // タイトル描画
 function drawTitle(){
@@ -20,6 +14,23 @@ function drawTitle(){
         return;
     }
 
+
+    let difficultyHTML="";
+
+
+    TITLE_DIFFICULTY_LIST.forEach(difficulty=>{
+
+        difficultyHTML+=
+        `
+        <div class="difficultyItem"
+             data-difficulty="${difficulty}">
+            <span class="difficultyName">${difficulty}</span>
+        </div>
+        `;
+
+    });
+
+
     title.innerHTML=
     `
     <div class="titleLogo">
@@ -28,20 +39,7 @@ function drawTitle(){
 
     <div class="difficultyMenu">
 
-        <div class="difficultyItem"
-             data-difficulty="EASY">
-            <span class="difficultyName">EASY</span>
-        </div>
-
-        <div class="difficultyItem"
-             data-difficulty="NORMAL">
-            <span class="difficultyName">NORMAL</span>
-        </div>
-
-        <div class="difficultyItem"
-             data-difficulty="HARD">
-            <span class="difficultyName">HARD</span>
-        </div>
+        ${difficultyHTML}
 
     </div>
 
@@ -64,6 +62,7 @@ function drawTitle(){
     </div>
     `;
 
+
     updateTitleCursor();
 
     setTitleBackground();
@@ -81,6 +80,7 @@ function updateTitleCursor(){
             ".difficultyItem"
         );
 
+
     const talk=
         document.querySelector(
             ".titleTalk"
@@ -94,6 +94,7 @@ function updateTitleCursor(){
                 ".difficultyName"
             );
 
+
         const difficulty=
             item.dataset.difficulty;
 
@@ -103,14 +104,18 @@ function updateTitleCursor(){
             name.textContent=
                 "▶ "+difficulty+" ◀";
 
+
             selectedDifficulty=
                 difficulty;
 
+
             if(talk){
 
-                talk.textContent=TITLE_CONFIG[difficulty].dialogue;
+                talk.textContent=
+                    TITLE_CONFIG[difficulty].dialogue;
 
             }
+
 
         }else{
 
@@ -128,11 +133,15 @@ function updateTitleCursor(){
 function setTitleBackground(){
 
     const background=
-        document.getElementById("background");
+        document.getElementById(
+            "background"
+        );
+
 
     if(!background){
         return;
     }
+
 
     background.style.backgroundImage=
         `url("image/background/outside.png")`;
@@ -148,6 +157,7 @@ function checkTitleTap(x,y){
             "gameArea"
         );
 
+
     if(!gameArea){
         return;
     }
@@ -157,11 +167,13 @@ function checkTitleTap(x,y){
         ".difficultyItem"
     ).forEach((item,index)=>{
 
+
         const rect=
             getRelativeRect(
                 item,
                 gameArea
             );
+
 
         if(
             isPointInsideRect(
@@ -185,6 +197,7 @@ function checkTitleTap(x,y){
             ".titleStart"
         );
 
+
     if(!start){
         return;
     }
@@ -195,6 +208,7 @@ function checkTitleTap(x,y){
             start,
             gameArea
         );
+
 
     if(
         isPointInsideRect(
@@ -219,9 +233,11 @@ function closeTitle(){
             "titleScreen"
         );
 
+
     if(!title){
         return;
     }
+
 
     title.innerHTML="";
 
