@@ -11,28 +11,40 @@ let staffRollStarted=false;
 const STAFF_ROLL_DATA=[
     {text:"断末蚊"},
     {text:""},
+    {text:""},
 
     {text:"制作"},
+
+    {text:""},
+
     {text:"花丸　史"},
 
     {text:""},
+    {text:""},
 
     {text:"プログラミング"},
+
+    {text:""},
+
     {text:"ChatGPT"},
 
     {text:""},
+    {text:""},
 
-    {text:"蚊画像素材提供"},
-    {text:"PNGTree 様"},
+    {text:"素材提供"},
 
     {text:""},
 
-    {text:"背景素材提供"},
+    {text:"PNGTree 様"},
     {text:"copainter team 様"},
 
     {text:""},
+    {text:""},
 
     {text:"テストプレイ協力"},
+
+    {text:""},
+
     {text:"バクの好物　マスター"},
     {text:"居酒屋しょうき　マスター"},
     {text:"プレイヤーA"},
@@ -40,16 +52,24 @@ const STAFF_ROLL_DATA=[
     {text:"プレイヤーC"},
 
     {text:""},
+    {text:""},
 
     {text:"セリフパターン協力"},
+
+    {text:""},
+
     {text:"バクの好物　マスター"},
     {text:"プレイヤーX"},
     {text:"プレイヤーY"},
     {text:"プレイヤーZ"},
 
     {text:""},
+    {text:""},
 
     {text:"スポンサー様"},
+
+    {text:""},
+
     {text:"広告募集中"},
 
     {text:""},
@@ -61,6 +81,7 @@ const STAFF_ROLL_DATA=[
 
     {text:"※広告掲載後も吸血活動は継続します"},
 
+    {text:""},
     {text:""},
 
     {text:"THANK YOU FOR PLAYING"}
