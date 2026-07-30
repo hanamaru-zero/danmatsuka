@@ -1,4 +1,4 @@
-// ==========================================
+ // ==========================================
 // 断末蚊
 // gameOver.js
 // ==========================================
@@ -38,6 +38,7 @@ function updateGameOver(deltaTime){
     if(gameState!==GAME_STATE.GAMEOVER)return;
 
     gameOverTimer+=deltaTime;
+
 
     if(
         !gameOverButtonShown &&
@@ -84,6 +85,7 @@ function startGameOverBlackFade(){
 function showGameOverButton(){
 
     const screen=document.getElementById("gameOverScreen");
+
     if(!screen)return;
 
 
@@ -93,15 +95,19 @@ function showGameOverButton(){
         GAME OVER
     </div>
 
-    <button class="gameButton"
-            onclick="retryGame()">
-        リトライ
-    </button>
+    <div class="gameButtonArea">
 
-    <button class="gameButton"
-            onclick="returnTitle()">
-        タイトルへ戻る
-    </button>
+        <button class="gameButton"
+                onclick="retryGame()">
+            リトライ
+        </button>
+
+        <button class="gameButton"
+                onclick="returnTitle()">
+            タイトルへ戻る
+        </button>
+
+    </div>
     `;
 
 
