@@ -5,13 +5,15 @@
 
 
 /* ==========================================
-   スコア
+   ゲームヘッダーUI
 ========================================== */
 
+/* スコア */
 #score{
     position:absolute;
     top:10px;
-    left:10px;
+    left:50%;
+    transform:translateX(-50%);
     z-index:10;
     font-size:20px;
     font-weight:bold;
@@ -22,14 +24,12 @@
 }
 
 
-/* ==========================================
-   かゆみ耐性
-========================================== */
-
+/* かゆみ耐性 */
 #damage{
     position:absolute;
     top:40px;
-    left:10px;
+    left:50%;
+    transform:translateX(-50%);
     z-index:10;
     font-size:20px;
     font-weight:bold;
@@ -42,6 +42,30 @@
 
 .heart{
     color:red;
+}
+
+
+/* 音ON/OFFボタン */
+#soundButton{
+    position:absolute;
+    top:10px;
+    left:10px;
+    z-index:100;
+    font-size:24px;
+    cursor:pointer;
+    user-select:none;
+}
+
+
+/* 一時停止ボタン */
+#pauseButton{
+    position:absolute;
+    top:10px;
+    right:10px;
+    z-index:100;
+    font-size:24px;
+    cursor:pointer;
+    user-select:none;
 }
 
 
@@ -90,19 +114,15 @@
 
 
 @keyframes mosquitoSucking{
-
     0%{
         opacity:1;
     }
-
     50%{
         opacity:0.35;
     }
-
     100%{
         opacity:1;
     }
-
 }
 
 
@@ -111,121 +131,75 @@
 ========================================== */
 
 .hitEffect{
-
     position:absolute;
-
     width:24px;
     height:24px;
-
     border:4px solid white;
-
     border-radius:50%;
-
     z-index:45;
-
     pointer-events:none;
-
     box-shadow:
         0 0 8px white,
         0 0 15px rgba(255,255,255,0.8);
-
     transform:
         translate(-50%,-50%)
         scale(0.2);
-
     animation:
         hitWave 0.25s ease-out forwards;
-
 }
 
 
 .hitEffect::before{
-
     content:"";
-
     position:absolute;
-
     left:50%;
     top:50%;
-
     width:10px;
     height:10px;
-
     background:white;
-
     border-radius:50%;
-
     transform:
         translate(-50%,-50%);
-
     animation:
         hitFlash 0.15s ease-out forwards;
-
 }
-
 
 
 @keyframes hitWave{
-
     0%{
-
         opacity:1;
-
         transform:
             translate(-50%,-50%)
             scale(0.2);
-
     }
-
-
     50%{
-
         opacity:1;
-
         transform:
             translate(-50%,-50%)
             scale(2);
-
     }
-
-
     100%{
-
         opacity:0;
-
         transform:
             translate(-50%,-50%)
             scale(4.5);
-
     }
-
 }
 
 
-
 @keyframes hitFlash{
-
     0%{
-
         opacity:1;
-
         transform:
             translate(-50%,-50%)
             scale(1);
-
     }
-
-
     100%{
-
         opacity:0;
-
         transform:
             translate(-50%,-50%)
             scale(3);
-
     }
-
 }
 
 
