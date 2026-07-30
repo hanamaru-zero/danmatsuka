@@ -12,20 +12,6 @@
     inset:0;
 }
 
-.titleSettingsButton{
-    position:absolute;
-    top:10px;
-    right:10px;
-    z-index:70;
-    font-size:26px;
-    color:white;
-    text-shadow:
-        1px 1px 2px #000,
-        -1px -1px 2px #000;
-    cursor:pointer;
-    user-select:none;
-}
-
 
 /* ==========================================
    ゲームヘッダーUI
@@ -63,6 +49,7 @@
     color:red;
 }
 
+
 #soundButton{
     position:absolute;
     top:10px;
@@ -72,6 +59,22 @@
     cursor:pointer;
     user-select:none;
 }
+
+
+#settingButton{
+    position:absolute;
+    top:10px;
+    right:10px;
+    z-index:100;
+    font-size:26px;
+    color:white;
+    text-shadow:
+        1px 1px 2px #000,
+        -1px -1px 2px #000;
+    cursor:pointer;
+    user-select:none;
+}
+
 
 #pauseButton{
     position:absolute;
