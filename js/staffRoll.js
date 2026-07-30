@@ -13,7 +13,7 @@ const STAFF_ROLL_DATA=[
     {text:""},
     {text:""},
 
-    {text:"制作"},
+    {text:"◆制作"},
 
     {text:""},
 
@@ -22,7 +22,7 @@ const STAFF_ROLL_DATA=[
     {text:""},
     {text:""},
 
-    {text:"プログラミング"},
+    {text:"◆プログラミング"},
 
     {text:""},
 
@@ -31,7 +31,7 @@ const STAFF_ROLL_DATA=[
     {text:""},
     {text:""},
 
-    {text:"素材提供"},
+    {text:"◆素材提供"},
 
     {text:""},
 
@@ -41,7 +41,7 @@ const STAFF_ROLL_DATA=[
     {text:""},
     {text:""},
 
-    {text:"テストプレイ協力"},
+    {text:"◆テストプレイ協力"},
 
     {text:""},
 
@@ -54,7 +54,7 @@ const STAFF_ROLL_DATA=[
     {text:""},
     {text:""},
 
-    {text:"セリフパターン協力"},
+    {text:"◆セリフパターン協力"},
 
     {text:""},
 
@@ -66,7 +66,7 @@ const STAFF_ROLL_DATA=[
     {text:""},
     {text:""},
 
-    {text:"スポンサー様"},
+    {text:"◆スポンサー様"},
 
     {text:""},
 
@@ -78,9 +78,11 @@ const STAFF_ROLL_DATA=[
     {text:"蚊取り線香メーカー様、大歓迎"},
 
     {text:""},
+    {text:""},
 
     {text:"※広告掲載後も吸血活動は継続します"},
 
+    {text:""},
     {text:""},
     {text:""},
 
