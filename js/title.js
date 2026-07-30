@@ -72,8 +72,10 @@ function drawTitle(){
 
     if(startButton){
 
-        startButton.onclick=
-            startGamePlay;
+        startButton.addEventListener(
+            "click",
+            startGamePlay
+        );
 
     }
 
@@ -85,6 +87,7 @@ function drawTitle(){
     drawTitleHistory();
 
 }
+
 
 
 // 難易度表示更新
@@ -144,6 +147,7 @@ function updateTitleCursor(){
 }
 
 
+
 // タイトル背景固定
 function setTitleBackground(){
 
@@ -164,6 +168,7 @@ function setTitleBackground(){
 }
 
 
+
 // タイトル入力判定
 function checkTitleTap(x,y){
 
@@ -178,9 +183,11 @@ function checkTitleTap(x,y){
     }
 
 
+
     document.querySelectorAll(
         ".difficultyItem"
     ).forEach((item,index)=>{
+
 
         const rect=
             getRelativeRect(
@@ -206,6 +213,7 @@ function checkTitleTap(x,y){
     });
 
 
+
     const start=
         document.querySelector(
             ".gameButton"
@@ -227,7 +235,7 @@ function checkTitleTap(x,y){
     if(
         isPointInsideRect(
             x,
-        y,
+            y,
             startRect
         )
     ){
@@ -237,6 +245,7 @@ function checkTitleTap(x,y){
     }
 
 }
+
 
 
 // タイトル終了
@@ -258,6 +267,7 @@ function closeTitle(){
 }
 
 
+
 // ゲーム開始
 function startGamePlay(){
 
@@ -273,6 +283,7 @@ function startGamePlay(){
     initMosquito();
 
 }
+
 
 
 // タイトル初期化
