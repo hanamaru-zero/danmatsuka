@@ -154,6 +154,7 @@ h1{
 .difficultyName{
     min-width:170px;
     text-align:center;
+    white-space:nowrap;
 }
 
 
