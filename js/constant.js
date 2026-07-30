@@ -73,6 +73,11 @@ const DIALOGUE_MODE={
 };
 
 
+// CSV読み込み後データ保持
+let ATTRIBUTE_SETTINGS={};
+let DIALOGUE_DATA={};
+
+
 // layer設定
 const LAYER_SETTINGS={
     [LAYER.FAR]:{
@@ -191,39 +196,4 @@ const COLOR_SETTINGS={
         baseSpeed:3,
         dialogueColor:"#c00"
     }
-};
-
-
-// 蚊属性設定
-const ATTRIBUTE_SETTINGS={
-    rookie:{
-        name:"蚊",
-        weight:70,
-        evadeRate:0.05
-    },
-
-    aggressive:{
-        name:"好戦蚊",
-        weight:20,
-        evadeRate:0.10
-    },
-
-    mobile:{
-        name:"モビル蚊",
-        weight:20,
-        evadeRate:0.20
-    },
-
-    zawa:{
-        name:"ざわ…蚊",
-        weight:10,
-        evadeRate:0.05
-    },
-
-    jojo:{
-        name:"奇妙な蚊",
-        weight:10,
-        evadeRate:0.10
-    }
-
 };

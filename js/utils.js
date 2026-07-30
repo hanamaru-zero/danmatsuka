@@ -18,10 +18,7 @@ function weightedRandom(data){
         totalWeight+=data[key].weight;
     }
 
-
-    let random=
-        Math.random()*totalWeight;
-
+    let random=Math.random()*totalWeight;
 
     for(const key in data){
 
@@ -32,7 +29,6 @@ function weightedRandom(data){
         }
 
     }
-
 
     return null;
 
@@ -53,19 +49,11 @@ function getRelativeRect(element,parent){
     const parentRect=
         parent.getBoundingClientRect();
 
-
     return {
-        left:
-            rect.left-parentRect.left,
-
-        top:
-            rect.top-parentRect.top,
-
-        width:
-            rect.width,
-
-        height:
-            rect.height
+        left:rect.left-parentRect.left,
+        top:rect.top-parentRect.top,
+        width:rect.width,
+        height:rect.height
     };
 
 }
@@ -74,7 +62,7 @@ function getRelativeRect(element,parent){
 // 座標範囲判定
 function isPointInsideRect(x,y,rect){
 
-    return (
+    return(
         x>=rect.left &&
         x<=rect.left+rect.width &&
         y>=rect.top &&
@@ -95,18 +83,14 @@ function applyDifficulty(){
     const config=
         TITLE_CONFIG[selectedDifficulty];
 
-
     if(!config){
         return;
     }
 
-
-    // 蚊の最大数変更
     GAME_SETTINGS.maxMosquito=
         config.mosquitoCount;
 
 
-    // 背景変更
     const background=
         document.getElementById(
             "background"
@@ -119,5 +103,140 @@ function applyDifficulty(){
             `url("${config.background}")`;
 
     }
+
+}
+
+
+// ==========================================
+// CSV読み込み系
+// ==========================================
+
+
+// CSVファイル読み込み
+async function loadCSV(path){
+
+    const response=
+        await fetch(path);
+
+    if(!response.ok){
+
+        throw new Error(
+            "CSV読み込み失敗: "+path
+        );
+
+    }
+
+    return await response.text();
+
+}
+
+
+// CSV解析
+function parseCSV(text){
+
+    const lines=
+        text.trim().split("\n");
+
+    const headers=
+        lines[0].split(",");
+
+
+    return lines.slice(1).map(line=>{
+
+        const values=
+            line.split(",");
+
+        const row={};
+
+
+        headers.forEach((header,index)=>{
+
+            row[header.trim()]=
+                values[index]
+                ? values[index].trim()
+                : "";
+
+        });
+
+
+        return row;
+
+    });
+
+}
+
+
+// ==========================================
+// 属性CSV変換
+// ==========================================
+
+
+// CSV行を属性設定へ変換
+function createAttributeSettings(rows){
+
+    const settings={};
+
+
+    rows.forEach(row=>{
+
+        settings[row.id]={
+
+            name:row.name,
+
+            weight:Number(row.weight),
+
+            evadeRate:Number(row.evadeRate)
+
+        };
+
+    });
+
+
+    return settings;
+
+}
+
+
+// ==========================================
+// セリフCSV変換
+// ==========================================
+
+
+// CSV行をセリフ設定へ変換
+function createDialogueData(rows){
+
+    const data={};
+
+
+    rows.forEach(row=>{
+
+
+        if(!data[row.id]){
+
+            data[row.id]={
+
+                spawn:[],
+                evade:[],
+                destroy:[],
+                sucking:[],
+                complete:[]
+
+            };
+
+        }
+
+
+        if(data[row.id][row.type]){
+
+            data[row.id][row.type].push(
+                row.text
+            );
+
+        }
+
+    });
+
+
+    return data;
 
 }
