@@ -19,6 +19,8 @@ function startDeath(){
 
     gameState=GAME_STATE.DEATH;
 
+    hideGameUI();
+
     deathTimer=0;
 
     deathPhase="dialogue";
@@ -33,9 +35,7 @@ function updateDeath(deltaTime){
         return;
     }
 
-
     deathTimer+=deltaTime;
-
 
     if(
         deathPhase==="dialogue" &&
@@ -47,7 +47,6 @@ function updateDeath(deltaTime){
         return;
 
     }
-
 
     if(
         deathPhase==="fade" &&
@@ -68,17 +67,14 @@ function startDeathFade(){
 
     deathPhase="fade";
 
-
     const fade=
         document.getElementById(
             "fadeLayer"
         );
 
-
     if(!fade){
         return;
     }
-
 
     fade.className="fadeRed";
 
@@ -90,10 +86,8 @@ function endDeath(){
 
     deathPhase="none";
 
-
     gameState=
         GAME_STATE.GAMEOVER;
-
 
     startGameOver();
 
