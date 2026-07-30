@@ -216,6 +216,16 @@ h1{
 }
 
 
+/* ゲームボタン配置 */
+
+.gameButtonArea{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:20px;
+}
+
+
 /* タイトルボタン */
 
 .titleButtonArea{
