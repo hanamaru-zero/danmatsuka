@@ -22,10 +22,12 @@ const STAFF_ROLL_DATA=[
 
     {text:""},
 
-    {text:"素材提供"},
-    {text:"蚊画像素材"},
+    {text:"蚊画像素材提供"},
     {text:"PNGTree 様"},
-    {text:"背景素材"},
+
+    {text:""},
+
+    {text:"背景素材提供"},
     {text:"copainter team 様"},
 
     {text:""},
@@ -49,8 +51,14 @@ const STAFF_ROLL_DATA=[
 
     {text:"スポンサー様"},
     {text:"広告募集中"},
+
+    {text:""},
+
     {text:"蚊帳メーカー様、大歓迎"},
     {text:"蚊取り線香メーカー様、大歓迎"},
+
+    {text:""},
+
     {text:"※広告掲載後も吸血活動は継続します"},
 
     {text:""},
