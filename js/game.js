@@ -34,7 +34,6 @@ async function loadGameData(){
             attributeRows
         );
 
-
     const dialogueCSV=
         await loadCSV(
             "data/dialogue.csv"
@@ -65,15 +64,12 @@ function changeStageBackground(){
         return;
     }
 
-
     const config=
         TITLE_CONFIG[selectedDifficulty];
-
 
     if(!config){
         return;
     }
-
 
     background.style.backgroundImage=
         `url("${config.background}")`;
@@ -100,6 +96,10 @@ function showGameUI(){
             "damage"
         );
 
+    const pauseButton=
+        document.getElementById(
+            "pauseButton"
+        );
 
     if(score){
         score.style.display="block";
@@ -107,6 +107,10 @@ function showGameUI(){
 
     if(damage){
         damage.style.display="block";
+    }
+
+    if(pauseButton){
+        pauseButton.style.display="flex";
     }
 
 }
@@ -125,6 +129,10 @@ function hideGameUI(){
             "damage"
         );
 
+    const pauseButton=
+        document.getElementById(
+            "pauseButton"
+        );
 
     if(score){
         score.style.display="none";
@@ -134,6 +142,9 @@ function hideGameUI(){
         damage.style.display="none";
     }
 
+    if(pauseButton){
+        pauseButton.style.display="none";
+    }
 
     gameUIShown=false;
 
@@ -148,15 +159,12 @@ function updateDamageDisplay(){
             "damage"
         );
 
-
     if(!damage){
         return;
     }
 
-
     const heartCount=
         SUCKING_SETTINGS.damageCountLimit-playerDamageCount;
-
 
     damage.innerHTML=
     `
@@ -175,7 +183,6 @@ function addSuckingDamage(){
     playerDamageCount++;
 
     updateDamageDisplay();
-
 
     if(
         playerDamageCount>=
@@ -229,7 +236,6 @@ function resetGame(){
 
     hideGameOver();
 
-
     mosquitoes.forEach(mosquito=>{
 
         mosquito.alive=false;
@@ -258,43 +264,33 @@ function resetGame(){
                 3000
             );
 
-
         const element=
             document.getElementById(
                 mosquito.id
             );
 
-
         if(element){
-
-            element.style.display=
-                "none";
-
+            element.style.display="none";
         }
-
 
         const dialogue=
             document.getElementById(
                 mosquito.id+"_dialogue"
             );
 
-
         if(dialogue){
-
-            dialogue.style.display=
-                "none";
-
+            dialogue.style.display="none";
         }
 
     });
 
 }
 
+
 // タイトル復帰用クリア
 function clearGameObjects(){
 
     clearDialogueHistory();
-
 
     mosquitoes.forEach(mosquito=>{
 
@@ -303,28 +299,20 @@ function clearGameObjects(){
                 mosquito.id
             );
 
-
         if(element){
-
             element.remove();
-
         }
-
 
         const dialogue=
             document.getElementById(
                 mosquito.id+"_dialogue"
             );
 
-
         if(dialogue){
-
             dialogue.remove();
-
         }
 
     });
-
 
     mosquitoes.length=0;
 
@@ -335,7 +323,6 @@ function clearGameObjects(){
     updateDamageDisplay();
 
 }
-
 
 
 // 更新
@@ -349,7 +336,6 @@ function update(deltaTime){
 
     }
 
-
     if(gameState===GAME_STATE.GAMEOVER){
 
         updateGameOver(deltaTime);
@@ -358,27 +344,18 @@ function update(deltaTime){
 
     }
 
-
     if(gameState!==GAME_STATE.PLAYING){
-
         return;
-
     }
-
 
     showGameUI();
 
-
     updateMosquitoSpawn(deltaTime);
-
     updateMosquitoMove();
-
     updateMosquitoState(deltaTime);
-
     updateMosquitoDialogue(deltaTime);
 
 }
-
 
 
 // 描画
@@ -390,13 +367,11 @@ function draw(){
     ){
 
         drawMosquito();
-
         drawDialogueBubble();
 
     }
 
 }
-
 
 
 // ゲームループ
@@ -405,14 +380,10 @@ function gameLoop(timestamp){
     const deltaTime=
         timestamp-lastTime;
 
-
     lastTime=timestamp;
 
-
     update(deltaTime);
-
     draw();
-
 
     requestAnimationFrame(
         gameLoop
@@ -421,12 +392,10 @@ function gameLoop(timestamp){
 }
 
 
-
 // 開始処理
 function startGame(){
 
     initPlayerInput();
-
 
     if(gameState===GAME_STATE.PLAYING){
 
@@ -436,7 +405,6 @@ function startGame(){
 
     }
 
-
     if(gameState===GAME_STATE.TITLE){
 
         hideGameUI();
@@ -445,18 +413,15 @@ function startGame(){
 
     }
 
-
     updateDamageDisplay();
 
     draw();
-
 
     requestAnimationFrame(
         gameLoop
     );
 
 }
-
 
 
 // CSV読み込み後に開始
