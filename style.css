@@ -102,6 +102,24 @@ h1{
 }
 
 
+/* タイトル設定ボタン */
+
+.titleOption{
+    position:absolute;
+    top:10px;
+    right:10px;
+    display:block;
+    font-size:28px;
+    color:white;
+    text-shadow:
+        1px 1px 2px #000,
+        -1px -1px 2px #000;
+    cursor:pointer;
+    user-select:none;
+    z-index:70;
+}
+
+
 .titleLogo{
     font-size:64px;
     font-weight:bold;
@@ -150,7 +168,6 @@ h1{
 .titleCursor{
     display:none;
 }
-
 
 /* 蚊＋セリフ */
 
@@ -231,9 +248,4 @@ h1{
 .titleButtonArea{
     margin-top:35px;
     text-align:center;
-}
-
-
-.titleOption{
-    display:none;
 }
