@@ -1,0 +1,6 @@
+id,name,weight,evadeRate
+rookie,通常蚊,70,0.05
+aggressive,好戦蚊,20,0.10
+mobile,モビル蚊,20,0.20
+zawa,ざわ…蚊,10,0.05
+jojo,奇妙な蚊,10,0.10
