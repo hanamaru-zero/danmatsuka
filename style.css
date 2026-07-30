@@ -29,9 +29,7 @@ h1{
 }
 
 
-/* ==========================================
-   ゲーム画面
-========================================== */
+/* ゲーム画面 */
 
 #gameArea{
     position:relative;
@@ -44,8 +42,6 @@ h1{
     touch-action:none;
 }
 
-
-/* スマホ縮小対応 */
 
 @media screen and (max-width:360px){
 
@@ -60,9 +56,7 @@ h1{
 }
 
 
-/* ==========================================
-   背景
-========================================== */
+/* 背景 */
 
 #background{
     position:absolute;
@@ -77,8 +71,6 @@ h1{
 }
 
 
-/* 背景暗幕 */
-
 #gameArea::before{
     content:"";
     position:absolute;
@@ -92,9 +84,7 @@ h1{
 }
 
 
-/* ==========================================
-   タイトル画面
-========================================== */
+/* タイトル画面 */
 
 #titleScreen{
     position:absolute;
@@ -123,9 +113,7 @@ h1{
 }
 
 
-/* ==========================================
-   難易度
-========================================== */
+/* 難易度 */
 
 .difficultyMenu{
     width:100%;
@@ -164,15 +152,12 @@ h1{
 }
 
 
-/* ==========================================
-   蚊＋セリフ
-========================================== */
+/* 蚊＋セリフ */
 
 .titleMessage{
     display:flex;
     justify-content:center;
     align-items:center;
-    gap:0;
     margin-top:25px;
 }
 
@@ -203,12 +188,9 @@ h1{
 }
 
 
-/* ==========================================
-   タイトルボタン
-========================================== */
+/* タイトルボタン */
 
 .titleButtonArea{
-    width:100%;
     margin-top:35px;
     text-align:center;
 }
@@ -216,18 +198,24 @@ h1{
 
 .titleStart{
     font-family:"ZenMaru",sans-serif;
-    font-size:36px;
+    font-size:32px;
     font-weight:bold;
     letter-spacing:2px;
     color:white;
-    background:none;
-    border:none;
-    padding:0;
+    background:rgba(0,0,0,0.45);
+    border:3px solid white;
+    border-radius:12px;
+    padding:8px 35px;
     margin:0;
     text-shadow:
         2px 2px 3px #000,
         -2px -2px 3px #000;
     touch-action:none;
+}
+
+
+.titleStart:active{
+    transform:scale(0.95);
 }
 
 
