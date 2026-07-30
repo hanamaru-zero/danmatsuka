@@ -145,14 +145,15 @@ h1{
     display:flex;
     justify-content:center;
     align-items:center;
-    width:170px;
+    width:220px;
     height:42px;
     margin:4px 0;
 }
 
 
 .difficultyName{
-    min-width:170px;
+    width:220px;
+    min-width:220px;
     text-align:center;
     white-space:nowrap;
 }
