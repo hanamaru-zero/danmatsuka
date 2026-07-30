@@ -8,7 +8,6 @@ let gameOverButtonShown=false;
 let blackFadeStarted=false;
 let staffRollRequest=false;
 
-
 const GAMEOVER_SETTINGS={
     buttonTime:500,
     blackFadeTime:2000,
@@ -38,17 +37,13 @@ function updateGameOver(deltaTime){
 
     if(gameState!==GAME_STATE.GAMEOVER)return;
 
-
     gameOverTimer+=deltaTime;
-
 
     if(
         !gameOverButtonShown &&
         gameOverTimer>=GAMEOVER_SETTINGS.buttonTime
     ){
-
         showGameOverButton();
-
     }
 
 
@@ -56,24 +51,16 @@ function updateGameOver(deltaTime){
         !blackFadeStarted &&
         gameOverTimer>=5000
     ){
-
         startGameOverBlackFade();
-
     }
 
 
     if(
         !staffRollRequest &&
-        gameOverTimer>=
-        5000+
-        GAMEOVER_SETTINGS.blackFadeTime+
-        1000
+        gameOverTimer>=5000+GAMEOVER_SETTINGS.blackFadeTime+1000
     ){
-
         staffRollRequest=true;
-
         startStaffRoll();
-
     }
 
 }
@@ -84,11 +71,9 @@ function startGameOverBlackFade(){
 
     blackFadeStarted=true;
 
-
     const fade=document.getElementById("fadeLayer");
 
     if(!fade)return;
-
 
     fade.className="fadeBlack";
 
@@ -108,15 +93,15 @@ function showGameOverButton(){
         GAME OVER
     </div>
 
-    <div class="gameOverButton"
-         onclick="retryGame()">
+    <button class="gameButton"
+            onclick="retryGame()">
         リトライ
-    </div>
+    </button>
 
-    <div class="gameOverButton"
-         onclick="returnTitle()">
+    <button class="gameButton"
+            onclick="returnTitle()">
         タイトルへ戻る
-    </div>
+    </button>
     `;
 
 
@@ -150,7 +135,6 @@ function hideGameOver(){
 
 
     resetStaffRoll();
-
 
     gameOverTimer=0;
     gameOverButtonShown=false;
