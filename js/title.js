@@ -16,9 +16,6 @@ function drawTitle(){
 
     TITLE_DIFFICULTY_LIST.forEach(difficulty=>{
 
-        difficulty+=
-        "";
-
         difficultyHTML+=
         `<div class="difficultyItem" data-difficulty="${difficulty}">
             <span class="difficultyName">${difficulty}</span>
@@ -27,11 +24,7 @@ function drawTitle(){
     });
 
     title.innerHTML=
-    `<div class="titleOption">
-        ⚙
-    </div>
-
-    <div class="titleLogo">
+    `<div class="titleLogo">
         断 末 蚊
     </div>
 
@@ -79,8 +72,7 @@ function updateTitleCursor(){
 
         if(index===titleCursorIndex){
 
-            name.textContent=
-                "▶ "+difficulty+" ◀";
+            name.textContent="▶ "+difficulty+" ◀";
 
             selectedDifficulty=difficulty;
 
