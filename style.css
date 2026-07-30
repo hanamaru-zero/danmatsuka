@@ -188,15 +188,9 @@ h1{
 }
 
 
-/* タイトルボタン */
+/* 共通ゲームボタン */
 
-.titleButtonArea{
-    margin-top:35px;
-    text-align:center;
-}
-
-
-.titleStart{
+.gameButton{
     font-family:"ZenMaru",sans-serif;
     font-size:32px;
     font-weight:bold;
@@ -214,13 +208,16 @@ h1{
 }
 
 
-.titleStart:active{
+.gameButton:active{
     transform:scale(0.95);
 }
 
 
-.titleStart:active{
-    transform:scale(0.95);
+/* タイトルボタン */
+
+.titleButtonArea{
+    margin-top:35px;
+    text-align:center;
 }
 
 
