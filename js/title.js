@@ -24,7 +24,11 @@ function drawTitle(){
     });
 
     title.innerHTML=
-    `<div class="titleLogo">
+    `<div class="titleOption">
+        ⚙
+    </div>
+
+    <div class="titleLogo">
         断 末 蚊
     </div>
 
