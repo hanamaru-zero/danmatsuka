@@ -3,12 +3,29 @@
    gameParts.css
 ========================================== */
 
+/* ==========================================
+   タイトルUI
+========================================== */
+
+#titleScreen{
+    position:absolute;
+    inset:0;
+}
+
+.titleSettingsButton{
+    position:absolute;
+    top:10px;
+    right:10px;
+    z-index:100;
+    font-size:26px;
+    cursor:pointer;
+    user-select:none;
+}
 
 /* ==========================================
    ゲームヘッダーUI
 ========================================== */
 
-/* スコア */
 #score{
     position:absolute;
     top:10px;
@@ -23,8 +40,6 @@
         -1px -1px 2px #000;
 }
 
-
-/* かゆみ耐性 */
 #damage{
     position:absolute;
     top:40px;
@@ -39,13 +54,10 @@
         -1px -1px 2px #000;
 }
 
-
 .heart{
     color:red;
 }
 
-
-/* 音ON/OFFボタン */
 #soundButton{
     position:absolute;
     top:10px;
@@ -56,8 +68,6 @@
     user-select:none;
 }
 
-
-/* 一時停止ボタン */
 #pauseButton{
     position:absolute;
     top:10px;
@@ -67,7 +77,6 @@
     cursor:pointer;
     user-select:none;
 }
-
 
 /* ==========================================
    蚊
@@ -82,8 +91,6 @@
     transform-origin:center;
 }
 
-
-/* 蚊画像 */
 .mosquitoImage{
     width:80px;
     height:80px;
@@ -95,8 +102,6 @@
         drop-shadow(0 0 3px white);
 }
 
-
-/* 赤蚊 */
 .mosquitoImage.RED{
     filter:
         drop-shadow(0 0 3px white)
@@ -105,13 +110,10 @@
         saturate(1.8);
 }
 
-
-/* 吸血中 */
 .mosquitoImage.sucking{
     animation:
         mosquitoSucking 0.4s infinite;
 }
-
 
 @keyframes mosquitoSucking{
     0%{
@@ -124,7 +126,6 @@
         opacity:1;
     }
 }
-
 
 /* ==========================================
    撃破衝撃波
@@ -148,7 +149,6 @@
         hitWave 0.25s ease-out forwards;
 }
 
-
 .hitEffect::before{
     content:"";
     position:absolute;
@@ -163,7 +163,6 @@
     animation:
         hitFlash 0.15s ease-out forwards;
 }
-
 
 @keyframes hitWave{
     0%{
@@ -186,7 +185,6 @@
     }
 }
 
-
 @keyframes hitFlash{
     0%{
         opacity:1;
@@ -201,7 +199,6 @@
             scale(3);
     }
 }
-
 
 /* ==========================================
    吹き出し
@@ -223,7 +220,6 @@
     transform-origin:center bottom;
 }
 
-
 /* ==========================================
    セリフ履歴
 ========================================== */
@@ -243,7 +239,6 @@
     pointer-events:none;
 }
 
-
 .historyLine{
     font-size:14px;
     font-weight:bold;
@@ -251,13 +246,11 @@
     white-space:nowrap;
 }
 
-
 .historyName{
     display:inline-block;
     width:60px;
     font-weight:bold;
 }
-
 
 .historyText{
     display:inline-block;
