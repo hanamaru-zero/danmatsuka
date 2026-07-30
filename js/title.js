@@ -46,14 +46,18 @@ function drawTitle(){
     const startButton=document.querySelector(".gameButton");
 
     if(startButton){
+
         startButton.addEventListener(
             "click",
             startGamePlay
         );
+
     }
 
     updateTitleCursor();
+
     setTitleBackground();
+
     drawTitleHistory();
 
 }
@@ -63,22 +67,29 @@ function drawTitle(){
 function updateTitleCursor(){
 
     const items=document.querySelectorAll(".difficultyItem");
+
     const talk=document.querySelector(".titleTalk");
 
     items.forEach((item,index)=>{
 
         const name=item.querySelector(".difficultyName");
+
         const difficulty=item.dataset.difficulty;
+
 
         if(index===titleCursorIndex){
 
-            name.textContent="▶ "+difficulty+" ◀";
+            name.textContent=
+                "▶ "+difficulty+" ◀";
 
             selectedDifficulty=difficulty;
 
+
             if(talk){
+
                 talk.textContent=
                     TITLE_CONFIG[difficulty].dialogue;
+
             }
 
         }else{
@@ -116,6 +127,7 @@ function checkTitleTap(x,y){
         return;
     }
 
+
     document.querySelectorAll(".difficultyItem")
     .forEach((item,index)=>{
 
@@ -123,6 +135,7 @@ function checkTitleTap(x,y){
             item,
             gameArea
         );
+
 
         if(isPointInsideRect(x,y,rect)){
 
@@ -134,16 +147,20 @@ function checkTitleTap(x,y){
 
     });
 
+
     const start=document.querySelector(".gameButton");
+
 
     if(!start){
         return;
     }
 
+
     const startRect=getRelativeRect(
         start,
         gameArea
     );
+
 
     if(isPointInsideRect(x,y,startRect)){
 
@@ -177,7 +194,8 @@ function startGamePlay(){
 
     applyDifficulty();
 
-    gameState=GAME_STATE.PLAYING;
+    gameState=
+        GAME_STATE.PLAYING;
 
     initMosquito();
 
