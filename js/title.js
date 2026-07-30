@@ -16,19 +16,18 @@ function drawTitle(){
 
     TITLE_DIFFICULTY_LIST.forEach(difficulty=>{
 
+        difficulty+=
+        "";
+
         difficultyHTML+=
-        `
-        <div class="difficultyItem"
-             data-difficulty="${difficulty}">
+        `<div class="difficultyItem" data-difficulty="${difficulty}">
             <span class="difficultyName">${difficulty}</span>
-        </div>
-        `;
+        </div>`;
 
     });
 
     title.innerHTML=
-    `
-    <div class="titleSettingsButton">
+    `<div class="titleOption">
         ⚙
     </div>
 
@@ -41,40 +40,27 @@ function drawTitle(){
     </div>
 
     <div class="titleMessage">
-
-        <img
-            src="image/mosquito.png"
-            class="titleMosquito">
-
+        <img src="image/mosquito.png" class="titleMosquito">
         <div class="titleTalk"></div>
-
     </div>
 
     <div class="titleButtonArea">
-
-        <button class="gameButton"
-                type="button">
+        <button class="gameButton" type="button">
             スタート
         </button>
-
-    </div>
-    `;
+    </div>`;
 
     const startButton=document.querySelector(".gameButton");
 
     if(startButton){
-
         startButton.addEventListener(
             "click",
             startGamePlay
         );
-
     }
 
     updateTitleCursor();
-
     setTitleBackground();
-
     drawTitleHistory();
 
 }
@@ -84,13 +70,11 @@ function drawTitle(){
 function updateTitleCursor(){
 
     const items=document.querySelectorAll(".difficultyItem");
-
     const talk=document.querySelector(".titleTalk");
 
     items.forEach((item,index)=>{
 
         const name=item.querySelector(".difficultyName");
-
         const difficulty=item.dataset.difficulty;
 
         if(index===titleCursorIndex){
@@ -101,10 +85,8 @@ function updateTitleCursor(){
             selectedDifficulty=difficulty;
 
             if(talk){
-
                 talk.textContent=
                     TITLE_CONFIG[difficulty].dialogue;
-
             }
 
         }else{
@@ -203,8 +185,7 @@ function startGamePlay(){
 
     applyDifficulty();
 
-    gameState=
-        GAME_STATE.PLAYING;
+    gameState=GAME_STATE.PLAYING;
 
     initMosquito();
 
