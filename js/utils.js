@@ -3,11 +3,9 @@
 // utils.js
 // ==========================================
 
-
 // ==========================================
 // 抽選系
 // ==========================================
-
 
 // 重みづけ抽選
 function weightedRandom(data){
@@ -81,21 +79,16 @@ function isPointInsideRect(x,y,rect){
 function applyDifficulty(){
 
     const config=
-        TITLE_CONFIG[selectedDifficulty];
+        DIFFICULTY_CONFIG[selectedDifficulty];
 
     if(!config){
         return;
     }
 
-    GAME_SETTINGS.maxMosquito=
-        config.mosquitoCount;
-
-
     const background=
         document.getElementById(
             "background"
         );
-
 
     if(background){
 
@@ -140,14 +133,12 @@ function parseCSV(text){
     const headers=
         lines[0].split(",");
 
-
     return lines.slice(1).map(line=>{
 
         const values=
             line.split(",");
 
         const row={};
-
 
         headers.forEach((header,index)=>{
 
@@ -157,7 +148,6 @@ function parseCSV(text){
                 : "";
 
         });
-
 
         return row;
 
@@ -176,7 +166,6 @@ function createAttributeSettings(rows){
 
     const settings={};
 
-
     rows.forEach(row=>{
 
         settings[row.id]={
@@ -190,7 +179,6 @@ function createAttributeSettings(rows){
         };
 
     });
-
 
     return settings;
 
@@ -207,9 +195,7 @@ function createDialogueData(rows){
 
     const data={};
 
-
     rows.forEach(row=>{
-
 
         if(!data[row.id]){
 
@@ -225,7 +211,6 @@ function createDialogueData(rows){
 
         }
 
-
         if(data[row.id][row.type]){
 
             data[row.id][row.type].push(
@@ -235,7 +220,6 @@ function createDialogueData(rows){
         }
 
     });
-
 
     return data;
 

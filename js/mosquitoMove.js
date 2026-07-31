@@ -18,7 +18,7 @@ function randomRange(min,max){
 function calculateSpeed(mosquito){
 
     const difficulty=
-        TITLE_CONFIG[selectedDifficulty];
+        DIFFICULTY_CONFIG[selectedDifficulty];
 
 
     const difficultyRate=

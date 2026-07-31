@@ -80,7 +80,6 @@ function updateTitleCursor(){
 
         const difficulty=item.dataset.difficulty;
 
-
         if(index===titleCursorIndex){
 
             name.textContent=
@@ -88,11 +87,10 @@ function updateTitleCursor(){
 
             selectedDifficulty=difficulty;
 
-
             if(talk){
 
                 talk.textContent=
-                    TITLE_CONFIG[difficulty].dialogue;
+                    DIFFICULTY_CONFIG[difficulty].dialogue;
 
             }
 
@@ -131,7 +129,6 @@ function checkTitleTap(x,y){
         return;
     }
 
-
     document.querySelectorAll(".difficultyItem")
     .forEach((item,index)=>{
 
@@ -139,7 +136,6 @@ function checkTitleTap(x,y){
             item,
             gameArea
         );
-
 
         if(isPointInsideRect(x,y,rect)){
 
@@ -151,20 +147,16 @@ function checkTitleTap(x,y){
 
     });
 
-
     const start=document.querySelector(".gameButton");
-
 
     if(!start){
         return;
     }
 
-
     const startRect=getRelativeRect(
         start,
         gameArea
     );
-
 
     if(isPointInsideRect(x,y,startRect)){
 

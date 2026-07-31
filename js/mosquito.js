@@ -129,9 +129,8 @@ function updateMosquitoSpawn(deltaTime){
 function initMosquito(){
 
     const maxMosquito=
-        TITLE_CONFIG[selectedDifficulty]
-        ? TITLE_CONFIG[selectedDifficulty].mosquitoCount
-        : GAME_SETTINGS.maxMosquito;
+        DIFFICULTY_CONFIG[selectedDifficulty]
+        .mosquitoCount;
 
 
     for(

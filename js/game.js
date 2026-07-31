@@ -65,7 +65,7 @@ function changeStageBackground(){
     }
 
     const config=
-        TITLE_CONFIG[selectedDifficulty];
+        DIFFICULTY_CONFIG[selectedDifficulty];
 
     if(!config){
         return;
