@@ -225,14 +225,14 @@ function drawTitleHistory(){
         ▼遊び方
     </div>
     <div class="historyLine">
-        1．迫り来る蚊をタップして撃退しろ！
+        １．迫り来る蚊をタップして撃退しろ！
     </div>
     <div class="historyLine">
-        2．吸血を許すと「かゆみ」が蓄積するぞ！
+        ２．吸血を許すと「かゆみ」が蓄積するぞ！
     </div>
     <div class="historyLine">
-        3．♥が0になるか、吸血完了されると<br>
-        ゲームオーバーだ！
+        ３．♥が0になるか、吸血完了されると<br>
+        　　ゲームオーバーだ！
     </div>
     `;
 
