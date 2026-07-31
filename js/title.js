@@ -231,7 +231,8 @@ function drawTitleHistory(){
         2．吸血を許すと「かゆみ」が蓄積するぞ！
     </div>
     <div class="historyLine">
-        3．♥が0になるか、吸血完了されるとゲームオーバーだ！
+        3．♥が0になるか、吸血完了されると<br>
+        ゲームオーバーだ！
     </div>
     `;
 
