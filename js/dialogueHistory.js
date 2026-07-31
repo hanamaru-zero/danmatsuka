@@ -59,27 +59,6 @@ function drawDialogueHistory(){
 }
 
 
-// タイトル表示用履歴
-function drawTitleHistory(){
-
-    const element=document.getElementById("dialogueHistory");
-
-    if(!element){
-        return;
-    }
-
-    element.innerHTML=
-    `
-    <div class="historyLine">
-        蚊撃墜ランキング
-    </div>
-    <div class="historyLine">
-        COMING SOON...
-    </div>
-    `;
-
-}
-
 
 // 履歴クリア
 function clearDialogueHistory(){
