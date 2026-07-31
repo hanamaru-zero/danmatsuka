@@ -208,3 +208,31 @@ function initTitle(){
     drawTitle();
 
 }
+
+
+// タイトル遊び方表示
+function drawTitleHistory(){
+
+    const element=document.getElementById("dialogueHistory");
+
+    if(!element){
+        return;
+    }
+
+    element.innerHTML=
+    `
+    <div class="historyLine">
+        ▼遊び方
+    </div>
+    <div class="historyLine">
+        1．迫り来る蚊をタップして撃退しろ！
+    </div>
+    <div class="historyLine">
+        2．吸血を許すと「かゆみ」が蓄積するぞ！
+    </div>
+    <div class="historyLine">
+        3．♥が0になるか、吸血完了されるとゲームオーバーだ！
+    </div>
+    `;
+
+}
