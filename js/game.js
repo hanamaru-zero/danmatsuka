@@ -52,7 +52,10 @@ async function loadGameData(){
 }
 
 
+// ==========================================
 // 背景変更
+// ==========================================
+
 function changeStageBackground(){
 
     const background=
@@ -77,7 +80,10 @@ function changeStageBackground(){
 }
 
 
+// ==========================================
 // ゲームUI表示
+// ==========================================
+
 function showGameUI(){
 
     if(gameUIShown){
@@ -116,7 +122,10 @@ function showGameUI(){
 }
 
 
+// ==========================================
 // ゲームUI非表示
+// ==========================================
+
 function hideGameUI(){
 
     const score=
@@ -151,7 +160,10 @@ function hideGameUI(){
 }
 
 
+// ==========================================
 // ハート表示更新
+// ==========================================
+
 function updateDamageDisplay(){
 
     const damage=
@@ -168,16 +180,16 @@ function updateDamageDisplay(){
 
     damage.innerHTML=
     `
-    かゆみ耐性:
-    <span class="heart">
-        ${"❤".repeat(Math.max(0,heartCount))}
-    </span>
+    かゆみ耐性： <span class="heart">${"❤".repeat(Math.max(0,heartCount))}</span>
     `;
 
 }
 
 
+// ==========================================
 // 吸血被害追加
+// ==========================================
+
 function addSuckingDamage(){
 
     playerDamageCount++;
@@ -199,7 +211,10 @@ function addSuckingDamage(){
 }
 
 
+// ==========================================
 // ゲーム開始
+// ==========================================
+
 function startPlay(){
 
     changeStageBackground();
@@ -220,7 +235,10 @@ function startPlay(){
 }
 
 
+// ==========================================
 // ゲームリセット
+// ==========================================
+
 function resetGame(){
 
     gameState=
@@ -286,8 +304,10 @@ function resetGame(){
 
 }
 
-
+// ==========================================
 // タイトル復帰用クリア
+// ==========================================
+
 function clearGameObjects(){
 
     clearDialogueHistory();
@@ -325,7 +345,10 @@ function clearGameObjects(){
 }
 
 
+// ==========================================
 // 更新
+// ==========================================
+
 function update(deltaTime){
 
     if(gameState===GAME_STATE.DEATH){
@@ -358,7 +381,10 @@ function update(deltaTime){
 }
 
 
+// ==========================================
 // 描画
+// ==========================================
+
 function draw(){
 
     if(
@@ -374,7 +400,10 @@ function draw(){
 }
 
 
+// ==========================================
 // ゲームループ
+// ==========================================
+
 function gameLoop(timestamp){
 
     const deltaTime=
@@ -392,7 +421,10 @@ function gameLoop(timestamp){
 }
 
 
+// ==========================================
 // 開始処理
+// ==========================================
+
 function startGame(){
 
     initPlayerInput();
@@ -426,7 +458,10 @@ function startGame(){
 }
 
 
+// ==========================================
 // CSV読み込み後に開始
+// ==========================================
+
 loadGameData()
 .then(()=>{
 
