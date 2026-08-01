@@ -1,7 +1,8 @@
 id,name,weight,evadeRate
-rookie,新入蚊,30,0.05
+rookie,新入蚊,20,0.05
 aggressive,好戦蚊,20,0.10
-mobile,モビル蚊,20,0.20
-zawa,ざわ…蚊,10,0.05
-jojo,奇妙な蚊,10,0.10
-titan,進撃の蚊,10,0.10
+mobile,モビル蚊,15,0.20
+zawa,ざわ…蚊,15,0.05
+jojo,奇妙な蚊,15,0.10
+korea,한류蚊,5,0.10
+titan,進撃の蚊,15,0.15
