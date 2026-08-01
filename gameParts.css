@@ -21,7 +21,6 @@
     user-select:none;
 }
 
-
 /* ==========================================
    ゲームヘッダーUI
 ========================================== */
@@ -38,6 +37,7 @@
     text-shadow:
         1px 1px 2px #000,
         -1px -1px 2px #000;
+    white-space:nowrap;
 }
 
 #damage{
@@ -52,10 +52,19 @@
     text-shadow:
         1px 1px 2px #000,
         -1px -1px 2px #000;
+    white-space:nowrap;
 }
 
 .heart{
     color:red;
+    display:inline-block;
+    width:3em;
+}
+
+#heart1,
+#heart2,
+#heart3{
+    display:inline-block;
 }
 
 #soundButton{
@@ -91,7 +100,6 @@
     cursor:pointer;
     user-select:none;
 }
-
 
 /* ==========================================
    蚊
@@ -141,7 +149,6 @@
         opacity:1;
     }
 }
-
 
 /* ==========================================
    撃破衝撃波
@@ -216,7 +223,6 @@
     }
 }
 
-
 /* ==========================================
    吹き出し
 ========================================== */
@@ -236,7 +242,6 @@
     padding:4px 8px;
     transform-origin:center bottom;
 }
-
 
 /* ==========================================
    セリフ履歴
