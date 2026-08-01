@@ -3,15 +3,8 @@
 // game.js
 // ==========================================
 
-let gameState=
-    DEBUG_MODE
-    ? GAME_STATE.PLAYING
-    : GAME_STATE.TITLE;
-
-let playerDamageCount=0;
+let gameState=DEBUG_MODE?GAME_STATE.PLAYING:GAME_STATE.TITLE;
 let lastTime=0;
-let gameUIShown=false;
-
 
 // ==========================================
 // CSVデータ読み込み
@@ -19,197 +12,17 @@ let gameUIShown=false;
 
 async function loadGameData(){
 
-    const attributeCSV=
-        await loadCSV(
-            "data/attribute.csv"
-        );
+    const attributeCSV=await loadCSV("data/attribute.csv");
+    const attributeRows=parseCSV(attributeCSV);
 
-    const attributeRows=
-        parseCSV(
-            attributeCSV
-        );
+    ATTRIBUTE_SETTINGS=createAttributeSettings(attributeRows);
 
-    ATTRIBUTE_SETTINGS=
-        createAttributeSettings(
-            attributeRows
-        );
+    const dialogueCSV=await loadCSV("data/dialogue.csv");
+    const dialogueRows=parseCSV(dialogueCSV);
 
-    const dialogueCSV=
-        await loadCSV(
-            "data/dialogue.csv"
-        );
-
-    const dialogueRows=
-        parseCSV(
-            dialogueCSV
-        );
-
-    DIALOGUE_DATA=
-        createDialogueData(
-            dialogueRows
-        );
+    DIALOGUE_DATA=createDialogueData(dialogueRows);
 
 }
-
-
-// ==========================================
-// 背景変更
-// ==========================================
-
-function changeStageBackground(){
-
-    const background=
-        document.getElementById(
-            "background"
-        );
-
-    if(!background){
-        return;
-    }
-
-    const config=
-        DIFFICULTY_CONFIG[selectedDifficulty];
-
-    if(!config){
-        return;
-    }
-
-    background.style.backgroundImage=
-        `url("${config.background}")`;
-
-}
-
-
-// ==========================================
-// ゲームUI表示
-// ==========================================
-
-function showGameUI(){
-
-    if(gameUIShown){
-        return;
-    }
-
-    gameUIShown=true;
-
-    const score=
-        document.getElementById(
-            "score"
-        );
-
-    const damage=
-        document.getElementById(
-            "damage"
-        );
-
-    const pauseButton=
-        document.getElementById(
-            "pauseButton"
-        );
-
-    if(score){
-        score.style.display="block";
-    }
-
-    if(damage){
-        damage.style.display="block";
-    }
-
-    if(pauseButton){
-        pauseButton.style.display="flex";
-    }
-
-}
-
-
-// ==========================================
-// ゲームUI非表示
-// ==========================================
-
-function hideGameUI(){
-
-    const score=
-        document.getElementById(
-            "score"
-        );
-
-    const damage=
-        document.getElementById(
-            "damage"
-        );
-
-    const pauseButton=
-        document.getElementById(
-            "pauseButton"
-        );
-
-    if(score){
-        score.style.display="none";
-    }
-
-    if(damage){
-        damage.style.display="none";
-    }
-
-    if(pauseButton){
-        pauseButton.style.display="none";
-    }
-
-    gameUIShown=false;
-
-}
-
-
-// ==========================================
-// ハート表示更新
-// ==========================================
-
-function updateDamageDisplay(){
-
-    const damage=
-        document.getElementById(
-            "damage"
-        );
-
-    if(!damage){
-        return;
-    }
-
-    const heartCount=
-        SUCKING_SETTINGS.damageCountLimit-playerDamageCount;
-
-    damage.innerHTML=
-    `
-    かゆみ耐性： <span class="heart">${"❤".repeat(Math.max(0,heartCount))}</span>
-    `;
-
-}
-
-
-// ==========================================
-// 吸血被害追加
-// ==========================================
-
-function addSuckingDamage(){
-
-    playerDamageCount++;
-
-    updateDamageDisplay();
-
-    if(
-        playerDamageCount>=
-        SUCKING_SETTINGS.damageCountLimit
-    ){
-
-        gameState=
-            GAME_STATE.DEATH;
-
-        startDeath();
-
-    }
-
-}
-
 
 // ==========================================
 // ゲーム開始
@@ -219,12 +32,11 @@ function startPlay(){
 
     changeStageBackground();
 
-    gameState=
-        GAME_STATE.PLAYING;
+    gameState=GAME_STATE.PLAYING;
 
     showGameUI();
 
-    playerDamageCount=0;
+    resetPlayerStatus();
 
     updateDamageDisplay();
 
@@ -234,19 +46,17 @@ function startPlay(){
 
 }
 
-
 // ==========================================
 // ゲームリセット
 // ==========================================
 
 function resetGame(){
 
-    gameState=
-        GAME_STATE.PLAYING;
+    gameState=GAME_STATE.PLAYING;
 
     showGameUI();
 
-    playerDamageCount=0;
+    resetPlayerStatus();
 
     updateDamageDisplay();
 
@@ -258,11 +68,9 @@ function resetGame(){
 
         mosquito.alive=false;
 
-        mosquito.phase=
-            PHASE.APPROACH;
+        mosquito.phase=PHASE.APPROACH;
 
-        mosquito.destroyPhase=
-            DESTROY_PHASE.NONE;
+        mosquito.destroyPhase=DESTROY_PHASE.NONE;
 
         mosquito.destroyTime=0;
 
@@ -276,25 +84,15 @@ function resetGame(){
 
         mosquito.suckTime=0;
 
-        mosquito.spawnTimer=
-            randomRange(
-                300,
-                3000
-            );
+        mosquito.spawnTimer=randomRange(300,3000);
 
-        const element=
-            document.getElementById(
-                mosquito.id
-            );
+        const element=document.getElementById(mosquito.id);
 
         if(element){
             element.style.display="none";
         }
 
-        const dialogue=
-            document.getElementById(
-                mosquito.id+"_dialogue"
-            );
+        const dialogue=document.getElementById(mosquito.id+"_dialogue");
 
         if(dialogue){
             dialogue.style.display="none";
@@ -314,19 +112,13 @@ function clearGameObjects(){
 
     mosquitoes.forEach(mosquito=>{
 
-        const element=
-            document.getElementById(
-                mosquito.id
-            );
+        const element=document.getElementById(mosquito.id);
 
         if(element){
             element.remove();
         }
 
-        const dialogue=
-            document.getElementById(
-                mosquito.id+"_dialogue"
-            );
+        const dialogue=document.getElementById(mosquito.id+"_dialogue");
 
         if(dialogue){
             dialogue.remove();
@@ -336,14 +128,13 @@ function clearGameObjects(){
 
     mosquitoes.length=0;
 
-    playerDamageCount=0;
+    resetPlayerStatus();
 
     hideGameUI();
 
     updateDamageDisplay();
 
 }
-
 
 // ==========================================
 // 更新
@@ -380,25 +171,21 @@ function update(deltaTime){
 
 }
 
-
 // ==========================================
 // 描画
 // ==========================================
 
 function draw(){
 
-    if(
-        gameState===GAME_STATE.PLAYING ||
-        gameState===GAME_STATE.DEATH
-    ){
+    if(gameState===GAME_STATE.PLAYING||gameState===GAME_STATE.DEATH){
 
         drawMosquito();
+
         drawDialogueBubble();
 
     }
 
 }
-
 
 // ==========================================
 // ゲームループ
@@ -406,20 +193,17 @@ function draw(){
 
 function gameLoop(timestamp){
 
-    const deltaTime=
-        timestamp-lastTime;
+    const deltaTime=timestamp-lastTime;
 
     lastTime=timestamp;
 
     update(deltaTime);
+
     draw();
 
-    requestAnimationFrame(
-        gameLoop
-    );
+    requestAnimationFrame(gameLoop);
 
 }
-
 
 // ==========================================
 // 開始処理
@@ -451,12 +235,9 @@ function startGame(){
 
     draw();
 
-    requestAnimationFrame(
-        gameLoop
-    );
+    requestAnimationFrame(gameLoop);
 
 }
-
 
 // ==========================================
 // CSV読み込み後に開始
@@ -470,8 +251,6 @@ loadGameData()
 })
 .catch(error=>{
 
-    console.error(
-        error
-    );
+    console.error(error);
 
 });
