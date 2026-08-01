@@ -4,6 +4,8 @@
 // ==========================================
 
 let playerDamageCount=0;
+let score=0;
+let destroyCount=0;
 
 
 // ==========================================
@@ -13,6 +15,8 @@ let playerDamageCount=0;
 function resetPlayerStatus(){
 
     playerDamageCount=0;
+    score=0;
+    destroyCount=0;
 
 }
 

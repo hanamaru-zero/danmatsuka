@@ -3,7 +3,6 @@
 // mosquitoHit.js
 // ==========================================
 
-
 // ヒット判定
 function checkMosquitoHit(x,y){
 
@@ -36,16 +35,13 @@ function checkMosquitoHit(x,y){
 
         }
 
-
         const hit=
             Math.abs(centerX-x)<hitRange &&
             Math.abs(centerY-y)<hitRange;
 
-
         if(!hit){
             return;
         }
-
 
         if(
             mosquito.phase===PHASE.APPROACH &&
@@ -58,7 +54,6 @@ function checkMosquitoHit(x,y){
             return;
 
         }
-
 
         killMosquito(mosquito);
 
@@ -73,11 +68,9 @@ function isMosquitoEvade(mosquito){
     const attribute=
         ATTRIBUTE_SETTINGS[mosquito.attributeType];
 
-
     if(!attribute){
         return false;
     }
-
 
     return Math.random()<attribute.evadeRate;
 
@@ -90,10 +83,8 @@ function evadeMosquito(mosquito){
     mosquito.x+=
         mosquito.direction*30;
 
-
     mosquito.y+=
         randomRange(-25,25);
-
 
     showMosquitoDialogue(
         mosquito,
@@ -108,47 +99,42 @@ function killMosquito(mosquito){
 
     playSE("destroy");
 
+    score+=100;
+    destroyCount++;
+
+    updateScoreDisplay();
 
     showMosquitoDialogue(
         mosquito,
         "destroy"
     );
 
-
     mosquito.destroyLayer=
         mosquito.layer;
 
-
     mosquito.alive=false;
-
 
     mosquito.destroyPhase=
         DESTROY_PHASE.HIT;
 
-
     mosquito.destroyTime=
         DESTROY_SETTINGS.hitDuration;
 
-
     mosquito.rotation=0;
-
 
     const destroySetting=
         DESTROY_SETTINGS[
             mosquito.destroyLayer
         ];
 
-
     mosquito.fallSpeed=
         destroySetting.fallSpeed;
-
 
     mosquito.spawnTimer=
         randomRange(
             1000,
             3000
         );
-
 
     playMosquitoDestroyEffect(
         mosquito
@@ -163,22 +149,18 @@ function playMosquitoDestroyEffect(mosquito){
     const effect=
         document.createElement("div");
 
-
     effect.className=
         "hitEffect";
-
 
     const element=
         document.getElementById(
             mosquito.id
         );
 
-
     const gameArea=
         document.getElementById(
             "gameArea"
         );
-
 
     if(
         !element ||
@@ -187,39 +169,31 @@ function playMosquitoDestroyEffect(mosquito){
         return;
     }
 
-
     const rect=
         element.getBoundingClientRect();
 
-
     const gameRect=
         gameArea.getBoundingClientRect();
-
 
     const centerX=
         rect.left-
         gameRect.left+
         (rect.width/2);
 
-
     const centerY=
         rect.top-
         gameRect.top+
         (rect.height/2);
 
-
     effect.style.left=
         centerX+"px";
-
 
     effect.style.top=
         centerY+"px";
 
-
     gameArea.appendChild(
         effect
     );
-
 
     setTimeout(()=>{
 

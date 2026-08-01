@@ -40,6 +40,8 @@ function startPlay(){
 
     updateDamageDisplay();
 
+    updateScoreDisplay();
+
     clearDialogueHistory();
 
     resetGame();
@@ -59,6 +61,8 @@ function resetGame(){
     resetPlayerStatus();
 
     updateDamageDisplay();
+
+    updateScoreDisplay();
 
     clearDialogueHistory();
 
@@ -133,6 +137,8 @@ function clearGameObjects(){
     hideGameUI();
 
     updateDamageDisplay();
+
+    updateScoreDisplay();
 
 }
 
@@ -232,6 +238,8 @@ function startGame(){
     }
 
     updateDamageDisplay();
+
+    updateScoreDisplay();
 
     draw();
 
