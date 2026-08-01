@@ -3,7 +3,6 @@
 // dialogue.js
 // ==========================================
 
-
 // セリフ取得
 function getMosquitoDialogue(attributeType,type){
 
@@ -31,7 +30,6 @@ function getMosquitoDialogue(attributeType,type){
     ];
 
 }
-
 
 // 吹き出し描画
 function drawDialogueBubble(){
@@ -93,7 +91,6 @@ function drawDialogueBubble(){
 
 }
 
-
 // MULTI吹き出し描画
 function drawDialogueBubbleMulti(mosquito){
 
@@ -123,8 +120,7 @@ function drawDialogueBubbleMulti(mosquito){
 
 }
 
-
-// 共通描画
+// 共通吹き出し描画
 function drawDialogueElement(
     element,
     mosquito,
