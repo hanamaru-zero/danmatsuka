@@ -155,7 +155,7 @@ function retryGame(){
 
     hideGameOver();
 
-    resetGame();
+    startPlay();
 
 }
 
