@@ -44,6 +44,7 @@ const DESTROY_PHASE={
 const GAME_STATE={
     TITLE:"title",
     PLAYING:"playing",
+    PAUSE:"pause",
     DEATH:"death",
     GAMEOVER:"gameover",
     OPTION:"option"

@@ -3,18 +3,12 @@
 // playerInput.js
 // ==========================================
 
-
 // 入力イベント登録
 function initPlayerInput(){
 
-    const gameArea=
-        document.getElementById("gameArea");
-
-
-    const soundButton=
-        document.getElementById(
-            "soundButton"
-        );
+    const gameArea=document.getElementById("gameArea");
+    const soundButton=document.getElementById("soundButton");
+    const pauseButton=document.getElementById("pauseButton");
 
 
     if(soundButton){
@@ -33,21 +27,30 @@ function initPlayerInput(){
     }
 
 
+    if(pauseButton){
+
+        pauseButton.addEventListener(
+            "pointerdown",
+            function(event){
+
+                event.stopPropagation();
+
+                togglePause();
+
+            }
+        );
+
+    }
+
+
     gameArea.addEventListener(
         "pointerdown",
         function(event){
 
-            const rect=
-                gameArea.getBoundingClientRect();
+            const rect=gameArea.getBoundingClientRect();
 
-
-            const x=
-                event.clientX-rect.left;
-
-
-            const y=
-                event.clientY-rect.top;
-
+            const x=event.clientX-rect.left;
+            const y=event.clientY-rect.top;
 
             onPlayerTap(x,y);
 

@@ -183,12 +183,13 @@ function update(deltaTime){
 
 function draw(){
 
-    if(gameState===GAME_STATE.PLAYING||gameState===GAME_STATE.DEATH){
-
+    if(
+        gameState===GAME_STATE.PLAYING||
+        gameState===GAME_STATE.PAUSE||
+        gameState===GAME_STATE.DEATH
+    ){
         drawMosquito();
-
         drawDialogueBubble();
-
     }
 
 }
