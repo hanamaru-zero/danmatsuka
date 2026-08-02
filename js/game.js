@@ -34,6 +34,8 @@ function startPlay(){
 
     resetPause();
 
+    clearGameObjects();
+
     resetGame();
 
     initMosquito();
