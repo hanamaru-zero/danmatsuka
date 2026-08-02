@@ -31,7 +31,7 @@ function addScore(mosquito){
 
     const colorSetting=
         COLOR_SETTINGS[
-            mosquito.attributeType
+            mosquito.colorType
         ];
 
     if(!colorSetting){
