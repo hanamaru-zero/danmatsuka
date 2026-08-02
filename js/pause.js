@@ -135,6 +135,10 @@ function showPauseMenu(){
 
     screen.innerHTML=
     `
+    <div class="pauseTitle">
+        PAUSE
+    </div>
+
     <div class="gameButtonArea">
 
         <button class="gameButton"
