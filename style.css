@@ -202,11 +202,14 @@ h1{
 
 .uiIcon{
     display:block;
-    width:32px;
-    height:32px;
+    width:26px;
+    height:26px;
     object-fit:contain;
     user-select:none;
     pointer-events:none;
+    filter:
+        drop-shadow(0 0 2px #000)
+        drop-shadow(0 0 4px rgba(255,255,255,0.5));
 }
 
 
