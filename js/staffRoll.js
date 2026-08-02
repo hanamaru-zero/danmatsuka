@@ -176,7 +176,7 @@ function startStaffRoll(){
 
 
     const resultData=[
-        {text:"◆リザルト"},
+        {text:"◆RESULT"},
         {text:""},
         {text:"スコア"},
         {text:String(score).padStart(8,"0")},

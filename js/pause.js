@@ -81,6 +81,21 @@ function pauseGame(){
     }
 
 
+    const background=
+        document.getElementById(
+            "background"
+        );
+
+
+    if(background){
+
+        background.classList.add(
+            "pauseBackground"
+        );
+
+    }
+
+
     showPauseMenu();
 
 }
@@ -107,6 +122,21 @@ function resumeGame(){
     if(button){
 
         button.textContent="⏸";
+
+    }
+
+
+    const background=
+        document.getElementById(
+            "background"
+        );
+
+
+    if(background){
+
+        background.classList.remove(
+            "pauseBackground"
+        );
 
     }
 
