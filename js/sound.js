@@ -60,6 +60,8 @@ function playSE(name){
     const path=
         SOUND_SETTINGS[name];
 
+console.log("SE:",name,path);
+
     if(!path){
         return;
     }
