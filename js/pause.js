@@ -7,6 +7,29 @@ let pauseActive=false;
 
 
 // ==========================================
+// 一時停止状態リセット
+// ==========================================
+
+function resetPause(){
+
+    pauseActive=false;
+
+    const button=
+        document.getElementById(
+            "pauseButton"
+        );
+
+
+    if(button){
+
+        button.textContent="⏸";
+
+    }
+
+}
+
+
+// ==========================================
 // 一時停止切替
 // ==========================================
 

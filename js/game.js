@@ -34,6 +34,8 @@ function startPlay(){
 
     gameState=GAME_STATE.PLAYING;
 
+    resetPause();
+
     showGameUI();
 
     resetPlayerStatus();
