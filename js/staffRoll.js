@@ -37,6 +37,7 @@ const STAFF_ROLL_DATA=[
 
     {text:"PNGTree 様"},
     {text:"copainter team 様"},
+    {text:"効果音ラボ 様"},
 
     {text:""},
     {text:""},
@@ -47,6 +48,7 @@ const STAFF_ROLL_DATA=[
 
     {text:"バクの好物　マスター"},
     {text:"居酒屋しょうき　マスター"},
+    {text:"みさみささん"},
     {text:"プレイヤーA"},
     {text:"プレイヤーB"},
     {text:"プレイヤーC"},
@@ -86,6 +88,12 @@ const STAFF_ROLL_DATA=[
     {text:""},
     {text:""},
 
+    {text:"煽り蚊や　指先一つで　断末魔"},
+
+    {text:""},
+    {text:""},
+    {text:""},
+
     {text:"THANK YOU FOR PLAYING"}
 ];
 
@@ -95,34 +103,24 @@ function randomDangerText(text){
 
     const indexes=[];
 
-
     for(let i=0;i<text.length;i++){
 
-        if(
-            text[i]!==" " &&
-            text[i]!=="　"
-        ){
-
+        if(text[i]!==" "&&text[i]!=="　"){
             indexes.push(i);
-
         }
 
     }
 
-
     if(indexes.length===0){
         return text;
     }
-
 
     const target=
         indexes[
             Math.floor(Math.random()*indexes.length)
         ];
 
-
     let result="";
-
 
     for(let i=0;i<text.length;i++){
 
@@ -131,8 +129,7 @@ function randomDangerText(text){
             result+=
             `<span class="staffDanger">${text[i]}</span>`;
 
-        }
-        else{
+        }else{
 
             result+=text[i];
 
@@ -140,11 +137,9 @@ function randomDangerText(text){
 
     }
 
-
     return result;
 
 }
-
 
 
 // スタッフロール初期化
@@ -155,12 +150,13 @@ function resetStaffRoll(){
     const roll=document.getElementById("staffRoll");
 
     if(roll){
+
         roll.innerHTML="";
         roll.style.display="none";
+
     }
 
 }
-
 
 
 // スタッフロール開始
@@ -172,7 +168,6 @@ function startStaffRoll(){
 
     staffRollStarted=true;
 
-
     const roll=document.getElementById("staffRoll");
 
     if(!roll){
@@ -180,10 +175,24 @@ function startStaffRoll(){
     }
 
 
+    const resultData=[
+        {text:"◆リザルト"},
+        {text:""},
+        {text:"スコア"},
+        {text:String(score).padStart(8,"0")},
+        {text:""},
+        {text:"撃墜数"},
+        {text:String(destroyCount)},
+        {text:""},
+        {text:""},
+        ...STAFF_ROLL_DATA
+    ];
+
+
     let html="";
 
 
-    STAFF_ROLL_DATA.forEach(item=>{
+    resultData.forEach(item=>{
 
         html+=
             randomDangerText(item.text)
