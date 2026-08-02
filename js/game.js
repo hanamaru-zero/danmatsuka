@@ -116,6 +116,8 @@ function clearGameObjects(){
 
     clearDialogueHistory();
 
+    resetPause();
+
     mosquitoes.forEach(mosquito=>{
 
         const element=document.getElementById(mosquito.id);

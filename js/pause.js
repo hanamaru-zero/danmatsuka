@@ -26,6 +26,21 @@ function resetPause(){
 
     }
 
+
+    const background=
+        document.getElementById(
+            "background"
+        );
+
+
+    if(background){
+
+        background.classList.remove(
+            "pauseBackground"
+        );
+
+    }
+
 }
 
 
