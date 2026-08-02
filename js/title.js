@@ -186,16 +186,9 @@ function startGamePlay(){
 
     closeTitle();
 
-    clearDialogueHistory();
-
     applyDifficulty();
 
-    resetPause();
-
-    gameState=
-        GAME_STATE.PLAYING;
-
-    initMosquito();
+    startPlay();
 
 }
 
