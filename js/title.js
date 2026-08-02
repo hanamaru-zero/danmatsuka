@@ -190,6 +190,8 @@ function startGamePlay(){
 
     applyDifficulty();
 
+    resetPause();
+
     gameState=
         GAME_STATE.PLAYING;
 
