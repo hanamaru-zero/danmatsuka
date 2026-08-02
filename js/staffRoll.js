@@ -184,7 +184,7 @@ function startStaffRoll(){
         {text:"撃墜数"},
         {text:String(destroyCount)},
 
-        ...Array(8).fill({text:""}),
+        ...Array(12).fill({text:""}),
 
         ...STAFF_ROLL_DATA
     ];
@@ -193,11 +193,23 @@ function startStaffRoll(){
     let html="";
 
 
-    resultData.forEach(item=>{
+    resultData.forEach((item,index)=>{
 
-        html+=
-            randomDangerText(item.text)
-            +"<br>";
+        const text=
+            randomDangerText(item.text);
+
+
+        if(index<7){
+
+            html+=
+                `<span class="resultText">${text}</span><br>`;
+
+        }else{
+
+            html+=
+                text+"<br>";
+
+        }
 
     });
 
