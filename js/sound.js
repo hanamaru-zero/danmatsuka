@@ -8,14 +8,10 @@ let soundEnabled=false;
 
 // 音設定
 const SOUND_SETTINGS={
-    destroy:
-        "sound/mosquito_hit.mp3",
-
-    click:
-        "sound/click.mp3",
-
-    bgm:
-        "sound/bgm.mp3"
+    destroy:"sound/mosquito_hit.mp3",
+    evade:"sound/mosquito_evade.mp3",
+    click:"sound/click.mp3",
+    bgm:"sound/bgm.mp3"
 };
 
 
@@ -28,8 +24,7 @@ function initSound(){
 // 音ON/OFF切替
 function toggleSound(){
 
-    soundEnabled=
-        !soundEnabled;
+    soundEnabled=!soundEnabled;
 
     updateSoundButton();
 
@@ -40,14 +35,11 @@ function toggleSound(){
 function updateSoundButton(){
 
     const button=
-        document.getElementById(
-            "soundButton"
-        );
+        document.getElementById("soundButton");
 
     if(!button){
         return;
     }
-
 
     if(soundEnabled){
         button.textContent="🔊";
@@ -65,19 +57,15 @@ function playSE(name){
         return;
     }
 
-
     const path=
         SOUND_SETTINGS[name];
-
 
     if(!path){
         return;
     }
 
-
     const audio=
         new Audio(path);
-
 
     audio.play()
     .catch(()=>{
@@ -96,21 +84,17 @@ function playBGM(){
         return;
     }
 
-
     const audio=
         new Audio(
             SOUND_SETTINGS.bgm
         );
 
-
     audio.loop=true;
-
 
     audio.play()
     .catch(()=>{
 
     });
-
 
     window.gameBGM=
         audio;
@@ -124,7 +108,6 @@ function stopBGM(){
     if(!window.gameBGM){
         return;
     }
-
 
     window.gameBGM.pause();
 

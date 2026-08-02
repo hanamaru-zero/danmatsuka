@@ -80,6 +80,8 @@ function isMosquitoEvade(mosquito){
 // 回避処理
 function evadeMosquito(mosquito){
 
+    playSE("evade");
+
     mosquito.x+=
         mosquito.direction*30;
 
