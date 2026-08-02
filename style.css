@@ -202,8 +202,8 @@ h1{
 
 .uiIcon{
     display:block;
-    width:26px;
-    height:26px;
+    width:32px;
+    height:32px;
     object-fit:contain;
     user-select:none;
     pointer-events:none;
