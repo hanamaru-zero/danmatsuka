@@ -183,9 +183,9 @@ function startStaffRoll(){
         {text:""},
         {text:"撃墜数"},
         {text:String(destroyCount)},
-        {text:""},
-        {text:""},
-        {text:""},
+
+        ...Array(8).fill({text:""}),
+
         ...STAFF_ROLL_DATA
     ];
 
