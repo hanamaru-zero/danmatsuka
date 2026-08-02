@@ -185,6 +185,7 @@ function startStaffRoll(){
         {text:String(destroyCount)},
         {text:""},
         {text:""},
+        {text:""},
         ...STAFF_ROLL_DATA
     ];
 
