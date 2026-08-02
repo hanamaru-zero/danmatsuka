@@ -3,7 +3,7 @@
 // game.js
 // ==========================================
 
-let gameState=DEBUG_MODE?GAME_STATE.PLAYING:GAME_STATE.TITLE;
+let gameState=GAME_STATE.TITLE;
 let lastTime=0;
 
 // ==========================================

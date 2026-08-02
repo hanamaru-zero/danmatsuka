@@ -3,9 +3,6 @@
 // config.js
 // ==========================================
 
-// デバッグ設定
-const DEBUG_MODE=false;
-
 // 画面設定
 const SCREEN={
     width:360,
