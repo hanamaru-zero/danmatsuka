@@ -156,7 +156,6 @@ const DIALOGUE_SCALE={
     [LAYER.FRONT]:1.0
 };
 
-
 // 撃破演出設定
 const DESTROY_SETTINGS={
     hitDuration:300,
@@ -177,28 +176,21 @@ const DESTROY_SETTINGS={
     }
 };
 
-
 // 蚊タイプ設定
 const COLOR_SETTINGS={
     BLACK:{
         weight:80,
         baseSpeed:2,
-        dialogueColor:"#222"
+        dialogueColor:"#222",
+        score:100
     },
     RED:{
         weight:20,
         baseSpeed:3,
-        dialogueColor:"#c00"
+        dialogueColor:"#c00",
+        score:200
     }
 };
-
-
-// ゲームスコア設定（将来拡張用）
-const SCORE_SETTINGS={
-    normal:100,
-    red:300
-};
-
 
 // プレイヤー設定
 const PLAYER_SETTINGS={

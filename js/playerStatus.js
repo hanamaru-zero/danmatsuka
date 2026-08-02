@@ -29,17 +29,17 @@ function addScore(mosquito){
 
     destroyCount++;
 
-    if(
-        mosquito.attributeType==="RED"
-    ){
+    const colorSetting=
+        COLOR_SETTINGS[
+            mosquito.attributeType
+        ];
 
-        score+=SCORE_SETTINGS.red;
-
-    }else{
-
-        score+=SCORE_SETTINGS.normal;
-
+    if(!colorSetting){
+        return;
     }
+
+    score+=
+        colorSetting.score;
 
 }
 
