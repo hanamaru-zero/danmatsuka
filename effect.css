@@ -90,6 +90,13 @@
 }
 
 
+/* リザルト文字 */
+.resultText{
+    font-size:42px;
+    letter-spacing:3px;
+}
+
+
 /* スタッフロール移動 */
 @keyframes staffScroll{
 
