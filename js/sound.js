@@ -17,7 +17,9 @@ const SOUND_SETTINGS={
 
 // 音初期化
 function initSound(){
+
     updateSoundButton();
+
 }
 
 
@@ -34,17 +36,23 @@ function toggleSound(){
 // 音状態更新
 function updateSoundButton(){
 
-    const button=
-        document.getElementById("soundButton");
+    const icon=
+        document.getElementById("soundIcon");
 
-    if(!button){
+    if(!icon){
         return;
     }
 
     if(soundEnabled){
-        button.textContent="🔊";
+
+        icon.src=
+            "image/icon/volume_on.png";
+
     }else{
-        button.textContent="🔇";
+
+        icon.src=
+            "image/icon/volume_off.png";
+
     }
 
 }
