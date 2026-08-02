@@ -36,6 +36,8 @@ function startPlay(){
 
     resetGame();
 
+    initMosquito();
+
 }
 
 // ==========================================
