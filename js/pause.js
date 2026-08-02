@@ -7,6 +7,44 @@ let pauseActive=false;
 
 
 // ==========================================
+// 一時停止アイコン更新
+// ==========================================
+
+function updatePauseIcon(){
+
+    const icon=
+        document.getElementById(
+            "pauseIcon"
+        );
+
+
+    if(!icon){
+        return;
+    }
+
+
+    if(pauseActive){
+
+        icon.src=
+            "image/icon/play.png";
+
+        icon.alt=
+            "再開";
+
+    }else{
+
+        icon.src=
+            "image/icon/pause.png";
+
+        icon.alt=
+            "一時停止";
+
+    }
+
+}
+
+
+// ==========================================
 // 一時停止状態リセット
 // ==========================================
 
@@ -14,17 +52,7 @@ function resetPause(){
 
     pauseActive=false;
 
-    const button=
-        document.getElementById(
-            "pauseButton"
-        );
-
-
-    if(button){
-
-        button.textContent="⏸";
-
-    }
+    updatePauseIcon();
 
 
     const background=
@@ -83,17 +111,7 @@ function pauseGame(){
         GAME_STATE.PAUSE;
 
 
-    const button=
-        document.getElementById(
-            "pauseButton"
-        );
-
-
-    if(button){
-
-        button.textContent="▶";
-
-    }
+    updatePauseIcon();
 
 
     const background=
@@ -128,17 +146,7 @@ function resumeGame(){
         GAME_STATE.PLAYING;
 
 
-    const button=
-        document.getElementById(
-            "pauseButton"
-        );
-
-
-    if(button){
-
-        button.textContent="⏸";
-
-    }
+    updatePauseIcon();
 
 
     const background=
