@@ -120,7 +120,7 @@
     object-fit:contain;
     user-select:none;
     filter:
-        drop-shadow(0 0 3px white);
+        drop-shadow(0 0 3px #9fe8ff);
 }
 
 .mosquitoImage.RED{
