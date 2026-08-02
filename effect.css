@@ -138,3 +138,16 @@
     margin:20px;
     cursor:pointer;
 }
+
+
+/* ==========================================
+   一時停止表示
+========================================== */
+
+.pauseTitle{
+    width:100%;
+    text-align:center;
+    font-size:56px;
+    letter-spacing:4px;
+    margin-bottom:40px;
+}
