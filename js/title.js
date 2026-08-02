@@ -25,7 +25,10 @@ function drawTitle(){
 
     title.innerHTML=
     `<div class="titleOption">
-        ⚙
+        <img
+            class="uiIcon"
+            src="image/icon/settings.png"
+            alt="設定">
     </div>
 
     <div class="titleLogo">
@@ -124,6 +127,7 @@ function setTitleBackground(){
 function checkTitleTap(x,y){
 
     const gameArea=document.getElementById("gameArea");
+
 
     if(!gameArea){
         return;
