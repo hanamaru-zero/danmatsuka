@@ -22,6 +22,29 @@ function resetPlayerStatus(){
 
 
 // ==========================================
+// スコア加算
+// ==========================================
+
+function addScore(mosquito){
+
+    destroyCount++;
+
+    if(
+        mosquito.attributeType==="RED"
+    ){
+
+        score+=SCORE_SETTINGS.red;
+
+    }else{
+
+        score+=SCORE_SETTINGS.normal;
+
+    }
+
+}
+
+
+// ==========================================
 // 吸血被害追加
 // ==========================================
 

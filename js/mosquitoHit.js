@@ -97,44 +97,52 @@ function evadeMosquito(mosquito){
 // 撃破処理
 function killMosquito(mosquito){
 
-    playSE("destroy");
-
-    score+=100;
-    destroyCount++;
+    addScore(mosquito);
 
     updateScoreDisplay();
+
+    playSE("destroy");
 
     showMosquitoDialogue(
         mosquito,
         "destroy"
     );
 
+
     mosquito.destroyLayer=
         mosquito.layer;
 
+
     mosquito.alive=false;
+
 
     mosquito.destroyPhase=
         DESTROY_PHASE.HIT;
 
+
     mosquito.destroyTime=
         DESTROY_SETTINGS.hitDuration;
 
+
     mosquito.rotation=0;
+
 
     const destroySetting=
         DESTROY_SETTINGS[
             mosquito.destroyLayer
         ];
 
+
     mosquito.fallSpeed=
         destroySetting.fallSpeed;
+
 
     mosquito.spawnTimer=
         randomRange(
             1000,
             3000
         );
+
 
     playMosquitoDestroyEffect(
         mosquito
@@ -149,18 +157,22 @@ function playMosquitoDestroyEffect(mosquito){
     const effect=
         document.createElement("div");
 
+
     effect.className=
         "hitEffect";
+
 
     const element=
         document.getElementById(
             mosquito.id
         );
 
+
     const gameArea=
         document.getElementById(
             "gameArea"
         );
+
 
     if(
         !element ||
@@ -169,31 +181,39 @@ function playMosquitoDestroyEffect(mosquito){
         return;
     }
 
+
     const rect=
         element.getBoundingClientRect();
 
+
     const gameRect=
         gameArea.getBoundingClientRect();
+
 
     const centerX=
         rect.left-
         gameRect.left+
         (rect.width/2);
 
+
     const centerY=
         rect.top-
         gameRect.top+
         (rect.height/2);
 
+
     effect.style.left=
         centerX+"px";
+
 
     effect.style.top=
         centerY+"px";
 
+
     gameArea.appendChild(
         effect
     );
+
 
     setTimeout(()=>{
 
