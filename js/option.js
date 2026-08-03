@@ -22,10 +22,9 @@ function openOption(){
     title.innerHTML=
     `
     <div class="titleOption">
-        <img
-            class="uiIcon"
-            src="image/icon/close.png"
-            alt="閉じる">
+        <img class="uiIcon"
+             src="image/icon/close.png"
+             alt="閉じる">
     </div>
 
     <div class="titleLogo">
@@ -69,18 +68,6 @@ function openOption(){
         encyclopedia.addEventListener(
             "click",
             openEncyclopedia
-        );
-
-    }
-
-
-    const share=document.getElementById("shareButton");
-
-    if(share){
-
-        share.addEventListener(
-            "click",
-            openShare
         );
 
     }
