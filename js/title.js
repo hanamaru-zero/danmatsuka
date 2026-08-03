@@ -3,6 +3,7 @@
 // title.js
 // ==========================================
 
+
 // タイトル描画
 function drawTitle(){
 
@@ -12,7 +13,9 @@ function drawTitle(){
         return;
     }
 
+
     let difficultyHTML="";
+
 
     TITLE_DIFFICULTY_LIST.forEach(difficulty=>{
 
@@ -22,6 +25,7 @@ function drawTitle(){
         </div>`;
 
     });
+
 
     title.innerHTML=
     `<div class="titleOption">
@@ -50,7 +54,12 @@ function drawTitle(){
         </button>
     </div>`;
 
-    const startButton=document.querySelector(".gameButton");
+
+    const startButton=
+        document.querySelector(
+            ".gameButton"
+        );
+
 
     if(startButton){
 
@@ -61,6 +70,23 @@ function drawTitle(){
 
     }
 
+
+    const optionButton=
+        document.querySelector(
+            ".titleOption"
+        );
+
+
+    if(optionButton){
+
+        optionButton.addEventListener(
+            "click",
+            openOption
+        );
+
+    }
+
+
     updateTitleCursor();
 
     setTitleBackground();
@@ -70,25 +96,45 @@ function drawTitle(){
 }
 
 
+
 // 難易度表示更新
 function updateTitleCursor(){
 
-    const items=document.querySelectorAll(".difficultyItem");
+    const items=
+        document.querySelectorAll(
+            ".difficultyItem"
+        );
 
-    const talk=document.querySelector(".titleTalk");
+
+    const talk=
+        document.querySelector(
+            ".titleTalk"
+        );
+
 
     items.forEach((item,index)=>{
 
-        const name=item.querySelector(".difficultyName");
 
-        const difficulty=item.dataset.difficulty;
+        const name=
+            item.querySelector(
+                ".difficultyName"
+            );
+
+
+        const difficulty=
+            item.dataset.difficulty;
+
 
         if(index===titleCursorIndex){
+
 
             name.textContent=
                 "▶ "+difficulty+" ◀";
 
-            selectedDifficulty=difficulty;
+
+            selectedDifficulty=
+                difficulty;
+
 
             if(talk){
 
@@ -97,25 +143,36 @@ function updateTitleCursor(){
 
             }
 
+
         }else{
 
-            name.textContent=difficulty;
+
+            name.textContent=
+                difficulty;
+
 
         }
+
 
     });
 
 }
 
 
+
 // タイトル背景固定
 function setTitleBackground(){
 
-    const background=document.getElementById("background");
+    const background=
+        document.getElementById(
+            "background"
+        );
+
 
     if(!background){
         return;
     }
+
 
     background.style.backgroundImage=
         `url("image/background/outside.png")`;
@@ -123,66 +180,97 @@ function setTitleBackground(){
 }
 
 
+
 // タイトル入力判定
 function checkTitleTap(x,y){
 
-    const gameArea=document.getElementById("gameArea");
+    const gameArea=
+        document.getElementById(
+            "gameArea"
+        );
 
 
     if(!gameArea){
         return;
     }
 
+
     document.querySelectorAll(".difficultyItem")
     .forEach((item,index)=>{
 
-        const rect=getRelativeRect(
-            item,
-            gameArea
-        );
+
+        const rect=
+            getRelativeRect(
+                item,
+                gameArea
+            );
+
 
         if(isPointInsideRect(x,y,rect)){
 
-            titleCursorIndex=index;
+
+            titleCursorIndex=
+                index;
+
 
             updateTitleCursor();
 
+
         }
+
 
     });
 
-    const start=document.querySelector(".gameButton");
+
+    const start=
+        document.querySelector(
+            ".gameButton"
+        );
+
 
     if(!start){
         return;
     }
 
-    const startRect=getRelativeRect(
-        start,
-        gameArea
-    );
+
+    const startRect=
+        getRelativeRect(
+            start,
+            gameArea
+        );
+
 
     if(isPointInsideRect(x,y,startRect)){
 
+
         startGamePlay();
+
 
     }
 
+
 }
+
 
 
 // タイトル終了
 function closeTitle(){
 
-    const title=document.getElementById("titleScreen");
+    const title=
+        document.getElementById(
+            "titleScreen"
+        );
+
 
     if(!title){
         return;
     }
 
+
     title.innerHTML="";
 
 }
+
 
 
 // ゲーム開始
@@ -197,6 +285,7 @@ function startGamePlay(){
 }
 
 
+
 // タイトル初期化
 function initTitle(){
 
@@ -209,14 +298,20 @@ function initTitle(){
 }
 
 
+
 // タイトル遊び方表示
 function drawTitleHistory(){
 
-    const element=document.getElementById("dialogueHistory");
+    const element=
+        document.getElementById(
+            "dialogueHistory"
+        );
+
 
     if(!element){
         return;
     }
+
 
     element.innerHTML=
     `
