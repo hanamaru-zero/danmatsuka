@@ -7,17 +7,19 @@
 
 function openOption(){
 
-    const title =
-        document.getElementById(
-            "titleScreen"
-        );
+    const title=document.getElementById("titleScreen");
 
     if(!title){
         return;
     }
 
+    const history=document.getElementById("dialogueHistory");
 
-    title.innerHTML =
+    if(history){
+        history.style.display="none";
+    }
+
+    title.innerHTML=
     `
     <div class="titleOption">
         <img
@@ -48,11 +50,7 @@ function openOption(){
     `;
 
 
-    const close =
-        document.querySelector(
-            ".titleOption"
-        );
-
+    const close=document.querySelector(".titleOption");
 
     if(close){
 
@@ -64,11 +62,7 @@ function openOption(){
     }
 
 
-    const encyclopedia =
-        document.getElementById(
-            "encyclopediaButton"
-        );
-
+    const encyclopedia=document.getElementById("encyclopediaButton");
 
     if(encyclopedia){
 
@@ -80,11 +74,7 @@ function openOption(){
     }
 
 
-    const share =
-        document.getElementById(
-            "shareButton"
-        );
-
+    const share=document.getElementById("shareButton");
 
     if(share){
 
@@ -101,6 +91,12 @@ function openOption(){
 // オプション終了
 
 function closeOption(){
+
+    const history=document.getElementById("dialogueHistory");
+
+    if(history){
+        history.style.display="block";
+    }
 
     initTitle();
 
