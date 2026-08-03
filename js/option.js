@@ -3,6 +3,7 @@
 // option.js
 // ==========================================
 
+
 // オプション画面表示
 
 function openOption(){
@@ -16,6 +17,7 @@ function openOption(){
         return;
     }
 
+
     title.innerHTML =
     `
     <div class="titleOption">
@@ -26,7 +28,7 @@ function openOption(){
     </div>
 
     <div class="titleLogo">
-        オプション
+        OPTION
     </div>
 
     <div class="gameButtonArea">
@@ -42,16 +44,36 @@ function openOption(){
     </div>
     `;
 
+
     const close =
         document.querySelector(
             ".titleOption"
         );
+
 
     if(close){
 
         close.addEventListener(
             "click",
             closeOption
+        );
+
+    }
+
+
+    // アオリカ図鑑ボタン
+
+    const buttons =
+        document.querySelectorAll(
+            ".gameButton"
+        );
+
+
+    if(buttons[0]){
+
+        buttons[0].addEventListener(
+            "click",
+            openEncyclopedia
         );
 
     }
