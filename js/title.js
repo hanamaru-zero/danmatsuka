@@ -57,7 +57,7 @@ function drawTitle(){
 
     const startButton=
         document.querySelector(
-            ".gameButton"
+            ".startButton"
         );
 
 
@@ -158,8 +158,6 @@ function updateTitleCursor(){
 
 }
 
-
-
 // タイトル背景固定
 function setTitleBackground(){
 
@@ -224,7 +222,7 @@ function checkTitleTap(x,y){
 
     const start=
         document.querySelector(
-            ".gameButton"
+            ".startButton"
         );
 
 
