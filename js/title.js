@@ -49,7 +49,7 @@ function drawTitle(){
     </div>
 
     <div class="titleButtonArea">
-        <button class="gameButton" type="button">
+        <button class="gameButton startButton" type="button">
             スタート
         </button>
     </div>`;

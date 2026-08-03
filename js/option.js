@@ -3,7 +3,6 @@
 // option.js
 // ==========================================
 
-
 // オプション画面表示
 
 function openOption(){
@@ -33,11 +32,15 @@ function openOption(){
 
     <div class="gameButtonArea">
 
-        <button class="gameButton">
+        <button id="encyclopediaButton"
+                class="gameButton"
+                type="button">
             アオリカとは？
         </button>
 
-        <button class="gameButton">
+        <button id="shareButton"
+                class="gameButton"
+                type="button">
             友達に伝染する
         </button>
 
@@ -61,19 +64,33 @@ function openOption(){
     }
 
 
-    // アオリカ図鑑ボタン
-
-    const buttons =
-        document.querySelectorAll(
-            ".gameButton"
+    const encyclopedia =
+        document.getElementById(
+            "encyclopediaButton"
         );
 
 
-    if(buttons[0]){
+    if(encyclopedia){
 
-        buttons[0].addEventListener(
+        encyclopedia.addEventListener(
             "click",
             openEncyclopedia
+        );
+
+    }
+
+
+    const share =
+        document.getElementById(
+            "shareButton"
+        );
+
+
+    if(share){
+
+        share.addEventListener(
+            "click",
+            openShare
         );
 
     }
