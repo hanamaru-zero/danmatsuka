@@ -16,33 +16,25 @@ function openEncyclopedia(){
         return;
     }
 
+
     title.innerHTML =
     `
     <div class="titleOption">
-
         <img
             class="uiIcon"
             src="image/icon/close.png"
             alt="閉じる">
-
-    </div>
-
-    <div class="titleLogo">
-        アオリカ
     </div>
 
     <div class="encyclopediaArea">
 
         <div class="encyclopediaText">
 
-            <h2>
-                アオリカ
-            </h2>
-
             <p>
                 学名：Aedes provocatoria（仮称）<br>
                 分類：ハエ目・カ科・アオリカ属
             </p>
+
 
             <h3>
                 概要
@@ -77,6 +69,7 @@ function openEncyclopedia(){
                 「イキリ蚊」とも呼ばれている。
             </p>
 
+
             <h3>
                 基本情報
             </h3>
@@ -100,6 +93,7 @@ function openEncyclopedia(){
                 </li>
 
             </ul>
+
 
             <p>
                 主な生息地：
@@ -174,6 +168,7 @@ function openEncyclopedia(){
 
             </ul>
 
+
             <p>
                 一方で、人類の手の位置、殺虫剤の射程、
                 蚊取り線香の存在などについては十分な学習能力を示していない。
@@ -182,6 +177,7 @@ function openEncyclopedia(){
             <blockquote>
                 もう少し逃走能力に知能を割くべきではないか
             </blockquote>
+
 
             <h3>
                 行動
@@ -216,10 +212,12 @@ function openEncyclopedia(){
 
             </ul>
 
+
             <p>
                 なお、人類側は挑発を聞き終える前に叩くことが多く、
                 演説完走例は極めて少ない。
             </p>
+
 
             <h3>
                 学習能力
@@ -251,9 +249,11 @@ function openEncyclopedia(){
 
             </ul>
 
+
             <blockquote>
                 元ネタは分かるが、今それを言う必要はない
             </blockquote>
+
 
             <h3>
                 天敵
@@ -261,14 +261,37 @@ function openEncyclopedia(){
 
             <ul>
 
-                <li>人類の指</li>
-                <li>手のひら</li>
-                <li>新聞紙</li>
-                <li>電撃ラケット</li>
-                <li>殺虫スプレー</li>
-                <li>蚊取り線香</li>
-                <li>ティッシュ</li>
-                <li>気まぐれ</li>
+                <li>
+                    人類の指
+                </li>
+
+                <li>
+                    手のひら
+                </li>
+
+                <li>
+                    新聞紙
+                </li>
+
+                <li>
+                    電撃ラケット
+                </li>
+
+                <li>
+                    殺虫スプレー
+                </li>
+
+                <li>
+                    蚊取り線香
+                </li>
+
+                <li>
+                    ティッシュ
+                </li>
+
+                <li>
+                    気まぐれ
+                </li>
 
             </ul>
 
@@ -296,9 +319,11 @@ function openEncyclopedia(){
 
             </ul>
 
+
             <p>
                 なお、多くの個体は鳴き終わる前に叩かれる。
             </p>
+
 
             <h3>
                 繁殖
@@ -313,6 +338,7 @@ function openEncyclopedia(){
                 挑発直後の生存率が極めて低いため、
                 統計的有意差は確認されていない。
             </p>
+
 
             <h3>
                 写真
@@ -332,31 +358,51 @@ function openEncyclopedia(){
                 人類の指との接触により消息を絶った。
             </p>
 
+
             <h3>
                 関連項目
             </h3>
 
             <ul>
 
-                <li>モビル蚊</li>
-                <li>北斗の蚊</li>
-                <li>中二病蚊</li>
-                <li>頂き蚊</li>
-                <li>関西蚊（イキリ蚊）</li>
-                <li>人類の指（本種最大の天敵）</li>
+                <li>
+                    モビル蚊
+                </li>
+
+                <li>
+                    北斗の蚊
+                </li>
+
+                <li>
+                    中二病蚊
+                </li>
+
+                <li>
+                    頂き蚊
+                </li>
+
+                <li>
+                    関西蚊（イキリ蚊）
+                </li>
+
+                <li>
+                    人類の指（本種最大の天敵）
+                </li>
 
             </ul>
+
 
         </div>
 
     </div>
-
     `;
+
 
     const close =
         document.querySelector(
             ".titleOption"
         );
+
 
     if(close){
 
