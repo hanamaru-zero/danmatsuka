@@ -38,6 +38,7 @@ const STAFF_ROLL_DATA=[
     {text:"PNGTree 様"},
     {text:"copainter team 様"},
     {text:"効果音ラボ 様"},
+    {text:"ICOOON MONO 様"},
 
     {text:""},
     {text:""},
@@ -184,7 +185,7 @@ function startStaffRoll(){
         {text:"撃墜数"},
         {text:String(destroyCount)},
 
-        ...Array(25).fill({text:""}),
+        ...Array(27).fill({text:""}),
 
         ...STAFF_ROLL_DATA
     ];
