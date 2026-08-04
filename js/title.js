@@ -329,9 +329,6 @@ function drawTitleHistory(){
     <div class="historyLine">
         　
     </div>
-    <div class="historyLine">
-        ★初回通信量4.3Mbyte程度。以降の通信ほぼ無し。
-    </div>
     `;
 
 }
