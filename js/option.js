@@ -72,6 +72,18 @@ function openOption(){
 
     }
 
+
+    const share=document.getElementById("shareButton");
+
+    if(share){
+
+        share.addEventListener(
+            "click",
+            openQrShare
+        );
+
+    }
+
 }
 
 
