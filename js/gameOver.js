@@ -1,4 +1,4 @@
- // ==========================================
+// ==========================================
 // 断末蚊
 // gameOver.js
 // ==========================================
@@ -19,7 +19,10 @@ const GAMEOVER_SETTINGS={
 function startGameOver(){
 
     const screen=document.getElementById("gameOverScreen");
-    if(!screen)return;
+
+    if(!screen){
+        return;
+    }
 
     screen.innerHTML="";
     screen.style.display="none";
@@ -35,7 +38,9 @@ function startGameOver(){
 // ゲームオーバー更新
 function updateGameOver(deltaTime){
 
-    if(gameState!==GAME_STATE.GAMEOVER)return;
+    if(gameState!==GAME_STATE.GAMEOVER){
+        return;
+    }
 
     gameOverTimer+=deltaTime;
 
@@ -74,7 +79,9 @@ function startGameOverBlackFade(){
 
     const fade=document.getElementById("fadeLayer");
 
-    if(!fade)return;
+    if(!fade){
+        return;
+    }
 
     fade.className="fadeBlack";
 
@@ -86,7 +93,9 @@ function showGameOverButton(){
 
     const screen=document.getElementById("gameOverScreen");
 
-    if(!screen)return;
+    if(!screen){
+        return;
+    }
 
 
     screen.innerHTML=
@@ -153,6 +162,8 @@ function hideGameOver(){
 // リトライ
 function retryGame(){
 
+    playSE("confirm");
+
     hideGameOver();
 
     startPlay();
@@ -162,6 +173,8 @@ function retryGame(){
 
 // タイトルへ戻る
 function returnTitle(){
+
+    playSE("confirm");
 
     hideGameOver();
 
