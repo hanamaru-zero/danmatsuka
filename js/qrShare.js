@@ -42,7 +42,7 @@ function openQrShare(){
             </p>
 
             <p>
-                初回通信 約4.3Mbyte（通信ほぼなし）
+                初回通信 約4.5Mbyte（通信ほぼなし）
             </p>
 
             <p>
