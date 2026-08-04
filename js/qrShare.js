@@ -61,7 +61,13 @@ function openQrShare(){
 
         close.addEventListener(
             "click",
-            openOption
+            ()=>{
+
+                playSE("confirm");
+
+                openOption();
+
+            }
         );
 
     }

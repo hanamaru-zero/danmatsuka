@@ -416,7 +416,13 @@ function openEncyclopedia(){
 
         close.addEventListener(
             "click",
-            openOption
+            ()=>{
+
+                playSE("confirm");
+
+                openOption();
+
+            }
         );
 
     }

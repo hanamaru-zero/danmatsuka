@@ -48,19 +48,24 @@ function openOption(){
     </div>
     `;
 
-    const close=
-        document.querySelector(
-            ".titleOption"
-        );
+
+    const close=document.querySelector(".titleOption");
 
     if(close){
 
         close.addEventListener(
             "click",
-            closeOption
+            ()=>{
+
+                playSE("confirm");
+
+                closeOption();
+
+            }
         );
 
     }
+
 
     const encyclopedia=
         document.getElementById(
@@ -81,6 +86,7 @@ function openOption(){
         );
 
     }
+
 
     const share=
         document.getElementById(
@@ -115,7 +121,9 @@ function closeOption(){
         );
 
     if(history){
+
         history.style.display="block";
+
     }
 
     initTitle();
