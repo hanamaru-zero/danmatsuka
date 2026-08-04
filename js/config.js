@@ -54,19 +54,19 @@ let titleCursorIndex=1;
 // 難易度設定
 const DIFFICULTY_CONFIG={
     EASY:{
-        background:"image/background/room_morning.png",
+        background:"image/background/room_morning.webp",
         mosquitoCount:5,
         speedRate:1.0,
         dialogue:"妥当だな！"
     },
     NORMAL:{
-        background:"image/background/room_evening.png",
+        background:"image/background/room_evening.webp",
         mosquitoCount:8,
         speedRate:1.8,
         dialogue:"覚悟しろ！！"
     },
     HARD:{
-        background:"image/background/room_night.png",
+        background:"image/background/room_night.webp",
         mosquitoCount:12,
         speedRate:3.0,
         dialogue:"後悔するぞ！！！"

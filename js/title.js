@@ -173,7 +173,7 @@ function setTitleBackground(){
 
 
     background.style.backgroundImage=
-        `url("image/background/outside.png")`;
+        `url("image/background/outside.webp")`;
 
 }
 
