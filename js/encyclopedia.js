@@ -351,7 +351,7 @@ function openEncyclopedia(){
             <div class="encyclopediaPhoto">
 
                 <img
-                    src="image/mosquito_800.png"
+                    src="image/mosquito.png"
                     alt="アオリカ">
 
             </div>
