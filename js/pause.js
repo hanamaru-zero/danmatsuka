@@ -12,32 +12,21 @@ let pauseActive=false;
 
 function updatePauseIcon(){
 
-    const icon=
-        document.getElementById(
-            "pauseIcon"
-        );
-
+    const icon=document.getElementById("pauseIcon");
 
     if(!icon){
         return;
     }
 
-
     if(pauseActive){
 
-        icon.src=
-            "image/icon/play.png";
-
-        icon.alt=
-            "再開";
+        icon.src="image/icon/play.png";
+        icon.alt="再開";
 
     }else{
 
-        icon.src=
-            "image/icon/pause.png";
-
-        icon.alt=
-            "一時停止";
+        icon.src="image/icon/pause.png";
+        icon.alt="一時停止";
 
     }
 
@@ -55,11 +44,7 @@ function resetPause(){
     updatePauseIcon();
 
 
-    const background=
-        document.getElementById(
-            "background"
-        );
-
+    const background=document.getElementById("background");
 
     if(background){
 
@@ -107,18 +92,16 @@ function pauseGame(){
 
     pauseActive=true;
 
-    gameState=
-        GAME_STATE.PAUSE;
+    gameState=GAME_STATE.PAUSE;
+
+
+    playSE("confirm");
 
 
     updatePauseIcon();
 
 
-    const background=
-        document.getElementById(
-            "background"
-        );
-
+    const background=document.getElementById("background");
 
     if(background){
 
@@ -142,18 +125,16 @@ function resumeGame(){
 
     pauseActive=false;
 
-    gameState=
-        GAME_STATE.PLAYING;
+    gameState=GAME_STATE.PLAYING;
+
+
+    playSE("confirm");
 
 
     updatePauseIcon();
 
 
-    const background=
-        document.getElementById(
-            "background"
-        );
-
+    const background=document.getElementById("background");
 
     if(background){
 
@@ -175,11 +156,7 @@ function resumeGame(){
 
 function showPauseMenu(){
 
-    const screen=
-        document.getElementById(
-            "gameOverScreen"
-        );
-
+    const screen=document.getElementById("gameOverScreen");
 
     if(!screen){
         return;
@@ -219,11 +196,7 @@ function showPauseMenu(){
 
 function hidePauseMenu(){
 
-    const screen=
-        document.getElementById(
-            "gameOverScreen"
-        );
-
+    const screen=document.getElementById("gameOverScreen");
 
     if(screen){
 

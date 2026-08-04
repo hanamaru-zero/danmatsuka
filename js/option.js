@@ -48,8 +48,10 @@ function openOption(){
     </div>
     `;
 
-
-    const close=document.querySelector(".titleOption");
+    const close=
+        document.querySelector(
+            ".titleOption"
+        );
 
     if(close){
 
@@ -60,26 +62,42 @@ function openOption(){
 
     }
 
-
-    const encyclopedia=document.getElementById("encyclopediaButton");
+    const encyclopedia=
+        document.getElementById(
+            "encyclopediaButton"
+        );
 
     if(encyclopedia){
 
         encyclopedia.addEventListener(
             "click",
-            openEncyclopedia
+            ()=>{
+
+                playSE("confirm");
+
+                openEncyclopedia();
+
+            }
         );
 
     }
 
-
-    const share=document.getElementById("shareButton");
+    const share=
+        document.getElementById(
+            "shareButton"
+        );
 
     if(share){
 
         share.addEventListener(
             "click",
-            openQrShare
+            ()=>{
+
+                playSE("confirm");
+
+                openQrShare();
+
+            }
         );
 
     }
@@ -91,7 +109,10 @@ function openOption(){
 
 function closeOption(){
 
-    const history=document.getElementById("dialogueHistory");
+    const history=
+        document.getElementById(
+            "dialogueHistory"
+        );
 
     if(history){
         history.style.display="block";
