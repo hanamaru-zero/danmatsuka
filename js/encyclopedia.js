@@ -26,7 +26,7 @@ function openEncyclopedia(){
             alt="閉じる">
     </div>
 
-    <div class="titleLogo">
+    <div class="encyclopediaTitle">
         アオリカとは？
     </div>
     
