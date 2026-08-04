@@ -69,7 +69,14 @@ function drawTitle(){
 
         optionButton.addEventListener(
             "click",
-            openOption
+            ()=>{
+
+                playSE("confirm");
+
+                openOption();
+
+            }
+
         );
 
     }
