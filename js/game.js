@@ -40,7 +40,7 @@ function startPlay(){
 
     initMosquito();
 
-    playBGM();
+//    playBGM();
 
 }
 
