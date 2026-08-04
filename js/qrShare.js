@@ -7,68 +7,47 @@
 
 function openQrShare(){
 
-    const title =
-        document.getElementById(
-            "titleScreen"
-        );
+    const title=document.getElementById("titleScreen");
 
     if(!title){
         return;
     }
 
-
-    const shareURL =
+    const shareURL=
         "https://hanamaru-zero.github.io/danmatsuka/";
 
-
-    title.innerHTML =
+    title.innerHTML=
     `
     <div class="titleOption">
-
-        <img
-            class="uiIcon"
-            src="image/icon/close.png"
-            alt="閉じる">
-
+        <img class="uiIcon"
+             src="image/icon/close.png"
+             alt="閉じる">
     </div>
 
-
-    <div class="encyclopediaTitle">
+    <div class="qrShareTitle">
         友達に伝染する
     </div>
 
+    <div class="qrShareArea">
 
-    <div class="encyclopediaArea">
+        <div class="qrCode"
+             id="qrCode">
+        </div>
 
-        <div class="encyclopediaText">
-
-
-            <div class="qrArea"
-                 id="qrCode">
-
-            </div>
-
+        <div class="qrShareText">
 
             <p>
                 このQRコードを読み込むと、
-                <br>
                 断末蚊を遊べます。
             </p>
 
-
             <p>
-                初回通信 約4.3Mbyte
-                <br>
-                （通信ほぼなし）
+                初回通信 約4.3Mbyte（通信ほぼなし）
             </p>
 
-
             <p>
-                プレイ中通信：
-                <br>
-                蚊ほどもなし
+                プレイ中通信：蚊ほどもなし
             </p>
-
 
         </div>
 
@@ -76,11 +55,7 @@ function openQrShare(){
     `;
 
 
-    const close =
-        document.querySelector(
-            ".titleOption"
-        );
-
+    const close=document.querySelector(".titleOption");
 
     if(close){
 
@@ -92,11 +67,7 @@ function openQrShare(){
     }
 
 
-    const qr =
-        document.getElementById(
-            "qrCode"
-        );
-
+    const qr=document.getElementById("qrCode");
 
     if(qr && typeof QRCode !== "undefined"){
 
