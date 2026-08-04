@@ -26,6 +26,10 @@ function openEncyclopedia(){
             alt="閉じる">
     </div>
 
+    <div class="titleLogo">
+        アオリカとは？
+    </div>
+    
     <div class="encyclopediaArea">
 
         <div class="encyclopediaText">
@@ -66,7 +70,7 @@ function openEncyclopedia(){
 
             <p>
                 関西地方では、その生態から
-                「イキリ蚊」とも呼ばれている。
+                「イキリカ」とも呼ばれている。
             </p>
 
 
@@ -344,9 +348,13 @@ function openEncyclopedia(){
                 写真
             </h3>
 
-            <p>
-                📷
-            </p>
+            <div class="encyclopediaPhoto">
+
+                <img
+                    src="image/mosquito_800.png"
+                    alt="アオリカ">
+
+            </div>
 
             <p>
                 ※撮影者提供：
@@ -382,7 +390,7 @@ function openEncyclopedia(){
                 </li>
 
                 <li>
-                    関西蚊（イキリ蚊）
+                    関西蚊（イキリカ）
                 </li>
 
                 <li>
