@@ -10,7 +10,8 @@ let soundEnabled=false;
 const SOUND_SETTINGS={
     destroy:"sound/mosquito_hit.mp3",
     evade:"sound/mosquito_evade.mp3",
-    click:"sound/click.mp3",
+    select:"sound/ui_select.mp3",
+    confirm:"sound/ui_confirm.mp3",
     bgm:"sound/bgm.mp3"
 };
 
