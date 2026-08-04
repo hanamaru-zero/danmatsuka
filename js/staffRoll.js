@@ -31,6 +31,16 @@ const STAFF_ROLL_DATA=[
     {text:""},
     {text:""},
 
+    {text:"◆ライブラリ提供"},
+
+    {text:""},
+
+    {text:"QRCode.js"},
+    {text:"David Shim 様"},
+
+    {text:""},
+    {text:""},
+
     {text:"◆素材提供"},
 
     {text:""},
