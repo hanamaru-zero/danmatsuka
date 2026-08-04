@@ -3,7 +3,6 @@
 // title.js
 // ==========================================
 
-
 // タイトル描画
 function drawTitle(){
 
@@ -13,9 +12,7 @@ function drawTitle(){
         return;
     }
 
-
     let difficultyHTML="";
-
 
     TITLE_DIFFICULTY_LIST.forEach(difficulty=>{
 
@@ -25,7 +22,6 @@ function drawTitle(){
         </div>`;
 
     });
-
 
     title.innerHTML=
     `<div class="titleOption">
@@ -54,12 +50,8 @@ function drawTitle(){
         </button>
     </div>`;
 
-
     const startButton=
-        document.querySelector(
-            ".startButton"
-        );
-
+        document.querySelector(".startButton");
 
     if(startButton){
 
@@ -70,12 +62,8 @@ function drawTitle(){
 
     }
 
-
     const optionButton=
-        document.querySelector(
-            ".titleOption"
-        );
-
+        document.querySelector(".titleOption");
 
     if(optionButton){
 
@@ -86,7 +74,6 @@ function drawTitle(){
 
     }
 
-
     updateTitleCursor();
 
     setTitleBackground();
@@ -94,7 +81,6 @@ function drawTitle(){
     drawTitleHistory();
 
 }
-
 
 
 // 難易度表示更新
@@ -105,36 +91,28 @@ function updateTitleCursor(){
             ".difficultyItem"
         );
 
-
     const talk=
         document.querySelector(
             ".titleTalk"
         );
 
-
     items.forEach((item,index)=>{
-
 
         const name=
             item.querySelector(
                 ".difficultyName"
             );
 
-
         const difficulty=
             item.dataset.difficulty;
 
-
         if(index===titleCursorIndex){
-
 
             name.textContent=
                 "▶ "+difficulty+" ◀";
 
-
             selectedDifficulty=
                 difficulty;
-
 
             if(talk){
 
@@ -143,16 +121,12 @@ function updateTitleCursor(){
 
             }
 
-
         }else{
-
 
             name.textContent=
                 difficulty;
 
-
         }
-
 
     });
 
@@ -166,17 +140,14 @@ function setTitleBackground(){
             "background"
         );
 
-
     if(!background){
         return;
     }
-
 
     background.style.backgroundImage=
         `url("image/background/outside.webp")`;
 
 }
-
 
 
 // タイトル入力判定
@@ -187,15 +158,12 @@ function checkTitleTap(x,y){
             "gameArea"
         );
 
-
     if(!gameArea){
         return;
     }
 
-
     document.querySelectorAll(".difficultyItem")
     .forEach((item,index)=>{
-
 
         const rect=
             getRelativeRect(
@@ -203,33 +171,27 @@ function checkTitleTap(x,y){
                 gameArea
             );
 
-
         if(isPointInsideRect(x,y,rect)){
-
 
             titleCursorIndex=
                 index;
 
-
             updateTitleCursor();
 
+            playSE("select");
 
         }
 
-
     });
-
 
     const start=
         document.querySelector(
             ".startButton"
         );
 
-
     if(!start){
         return;
     }
-
 
     const startRect=
         getRelativeRect(
@@ -237,18 +199,15 @@ function checkTitleTap(x,y){
             gameArea
         );
 
-
     if(isPointInsideRect(x,y,startRect)){
 
+        playSE("confirm");
 
         startGamePlay();
 
-
     }
 
-
 }
-
 
 
 // タイトル終了
@@ -259,16 +218,13 @@ function closeTitle(){
             "titleScreen"
         );
 
-
     if(!title){
         return;
     }
 
-
     title.innerHTML="";
 
 }
-
 
 
 // ゲーム開始
@@ -283,7 +239,6 @@ function startGamePlay(){
 }
 
 
-
 // タイトル初期化
 function initTitle(){
 
@@ -296,7 +251,6 @@ function initTitle(){
 }
 
 
-
 // タイトル遊び方表示
 function drawTitleHistory(){
 
@@ -305,27 +259,29 @@ function drawTitleHistory(){
             "dialogueHistory"
         );
 
-
     if(!element){
         return;
     }
-
 
     element.innerHTML=
     `
     <div class="historyLine">
         ▼遊び方
     </div>
+
     <div class="historyLine">
         １．迫り来る蚊をタップして撃退しろ！
     </div>
+
     <div class="historyLine">
         ２．吸血を許すと「かゆみ」が蓄積するぞ！
     </div>
+
     <div class="historyLine">
         ３．♥が0になるか、吸血完了されると<br>
         　　ゲームオーバーだ！
     </div>
+
     <div class="historyLine">
         　
     </div>
