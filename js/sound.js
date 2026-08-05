@@ -33,6 +33,7 @@ function toggleSound(){
 
     updateSoundButton();
 
+
     if(soundEnabled){
 
         if(
@@ -57,9 +58,11 @@ function updateSoundButton(){
     const icon=
         document.getElementById("soundIcon");
 
+
     if(!icon){
         return;
     }
+
 
     if(soundEnabled){
 
@@ -83,15 +86,19 @@ function playSE(name){
         return;
     }
 
+
     const path=
         SOUND_SETTINGS[name];
+
 
     if(!path){
         return;
     }
 
+
     const audio=
         new Audio(path);
+
 
     audio.play()
     .catch(()=>{
@@ -113,24 +120,68 @@ function playBGM(){
         return;
     }
 
+
     if(window.gameBGM){
         return;
     }
+
 
     const audio=
         new Audio(
             SOUND_SETTINGS.bgm
         );
 
+
     audio.loop=true;
+
+    audio.volume=1;
+
 
     audio.play()
     .catch(()=>{
 
     });
 
+
     window.gameBGM=
         audio;
+
+}
+
+
+// BGMフェードアウト
+function fadeOutBGM(){
+
+    if(!window.gameBGM){
+        return;
+    }
+
+
+    const audio=
+        window.gameBGM;
+
+
+    const fadeSpeed=0.05;
+
+
+    const fade=
+        setInterval(()=>{
+
+
+            if(audio.volume>fadeSpeed){
+
+                audio.volume-=fadeSpeed;
+
+            }else{
+
+                clearInterval(fade);
+
+                stopBGM();
+
+            }
+
+
+        },100);
 
 }
 
@@ -141,6 +192,7 @@ function stopBGM(){
     if(!window.gameBGM){
         return;
     }
+
 
     window.gameBGM.pause();
 
