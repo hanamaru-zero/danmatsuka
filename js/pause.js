@@ -165,26 +165,30 @@ function showPauseMenu(){
 
     screen.innerHTML=
     `
-    <div class="pauseTitle">
-        PAUSE
-    </div>
+    <div class="pauseMenu">
 
-    <div class="gameButtonArea">
+        <div class="pauseTitle">
+            PAUSE
+        </div>
 
-        <button class="gameButton"
-                onclick="resumeGame()">
-            続ける
-        </button>
+        <div class="gameButtonArea">
 
-        <button class="gameButton pauseRetryButton"
-                onclick="retryGame()">
-            リトライ
-        </button>
+            <button class="gameButton"
+                    onclick="resumeGame()">
+                続ける
+            </button>
 
-        <button class="gameButton"
-                onclick="returnTitle()">
-            タイトルへ戻る
-        </button>
+            <button class="gameButton pauseRetryButton"
+                    onclick="retryGame()">
+                リトライ
+            </button>
+
+            <button class="gameButton"
+                    onclick="returnTitle()">
+                タイトルへ戻る
+            </button>
+
+        </div>
 
     </div>
     `;
