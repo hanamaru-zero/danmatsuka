@@ -60,6 +60,8 @@ const STAFF_ROLL_DATA=[
     {text:"バクの好物　マスター"},
     {text:"居酒屋しょうき　マスター"},
     {text:"みさみささん"},
+    {text:"強欲の壺（Y.M）さん"},
+    {text:"悪魔の断末魔（A.F）さん"},
     {text:"プレイヤーA"},
     {text:"プレイヤーB"},
     {text:"プレイヤーC"},
