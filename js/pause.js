@@ -172,6 +172,11 @@ function showPauseMenu(){
     <div class="gameButtonArea">
 
         <button class="gameButton"
+                onclick="resumeGame()">
+            続ける
+        </button>
+
+        <button class="gameButton pauseRetryButton"
                 onclick="retryGame()">
             リトライ
         </button>
