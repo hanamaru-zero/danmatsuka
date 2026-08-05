@@ -48,6 +48,27 @@ function setMosquitoPosition(mosquito){
         );
 
 
+    // 飛行揺れ基準位置
+    mosquito.baseY=
+        mosquito.y;
+
+
+    // 揺れ初期化
+    mosquito.wobbleTime=
+        Math.random()*Math.PI*2;
+
+
+    // 個体ごとに少し差を出す
+    mosquito.wobbleSpeed=
+        0.05+
+        Math.random()*0.05;
+
+
+    mosquito.wobbleSize=
+        3+
+        Math.random()*3;
+
+
     mosquito.scale =
         LAYER_SETTINGS[mosquito.layer].scale;
 
@@ -88,6 +109,20 @@ function updateMosquitoMove(){
         ){
             return;
         }
+
+
+        // 飛行揺れ
+        mosquito.wobbleTime+=
+            mosquito.wobbleSpeed;
+
+
+        mosquito.y =
+            mosquito.baseY+
+            Math.sin(
+                mosquito.wobbleTime
+            )*
+            mosquito.wobbleSize;
+
 
 
         // FRONT：WARNING位置へ移動

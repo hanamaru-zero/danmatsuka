@@ -37,6 +37,15 @@ function createMosquito(){
         x:0,
         y:0,
 
+
+        // 飛行揺れ
+        // APPROACH中のふらつき演出用
+        baseY:0,
+        wobbleTime:0,
+        wobbleSpeed:0,
+        wobbleSize:0,
+
+
         speed:0,
         direction:1,
 
@@ -45,9 +54,11 @@ function createMosquito(){
         warningTime:0,
         suckTime:0,
 
+
         // セリフ
         dialogue:"",
         dialogueTimer:0,
+
 
         spawnTimer:0
 
@@ -142,14 +153,18 @@ function initMosquito(){
         const mosquito=
             createMosquito();
 
+
         mosquitoes.push(mosquito);
+
 
         createMosquitoElement(
             mosquito
         );
 
+
         mosquito.x=-100;
         mosquito.y=-100;
+
 
         mosquito.spawnTimer=
             randomRange(
