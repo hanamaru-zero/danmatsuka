@@ -19,7 +19,7 @@ function startDeath(){
 
     gameState=GAME_STATE.DEATH;
 
-    stopBGM();
+    fadeOutBGM();
 
     hideGameUI();
 
