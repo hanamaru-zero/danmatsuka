@@ -164,3 +164,7 @@
     transition:
         filter 0.2s ease;
 }
+
+.pauseMenu{
+    transform:translateY(-80px);
+}
