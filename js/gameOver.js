@@ -44,7 +44,6 @@ function updateGameOver(deltaTime){
 
     gameOverTimer+=deltaTime;
 
-
     if(
         !gameOverButtonShown &&
         gameOverTimer>=GAMEOVER_SETTINGS.buttonTime
@@ -52,14 +51,12 @@ function updateGameOver(deltaTime){
         showGameOverButton();
     }
 
-
     if(
         !blackFadeStarted &&
         gameOverTimer>=5000
     ){
         startGameOverBlackFade();
     }
-
 
     if(
         !staffRollRequest &&
@@ -97,7 +94,6 @@ function showGameOverButton(){
         return;
     }
 
-
     screen.innerHTML=
     `
     <div class="gameOverTitle">
@@ -119,7 +115,6 @@ function showGameOverButton(){
     </div>
     `;
 
-
     screen.style.display="flex";
 
     gameOverButtonShown=true;
@@ -133,7 +128,6 @@ function hideGameOver(){
     const screen=document.getElementById("gameOverScreen");
     const fade=document.getElementById("fadeLayer");
 
-
     if(screen){
 
         screen.innerHTML="";
@@ -141,13 +135,11 @@ function hideGameOver(){
 
     }
 
-
     if(fade){
 
         fade.className="";
 
     }
-
 
     resetStaffRoll();
 
@@ -175,6 +167,12 @@ function retryGame(){
 function returnTitle(){
 
     playSE("confirm");
+
+    if(gameState===GAME_STATE.PAUSE){
+
+        stopBGM();
+
+    }
 
     hideGameOver();
 

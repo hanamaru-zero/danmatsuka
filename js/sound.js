@@ -5,6 +5,8 @@
 
 let soundEnabled=false;
 
+const BGM_ENABLED=true;
+
 
 // 音設定
 const SOUND_SETTINGS={
@@ -30,6 +32,21 @@ function toggleSound(){
     soundEnabled=!soundEnabled;
 
     updateSoundButton();
+
+    if(soundEnabled){
+
+        if(
+            BGM_ENABLED &&
+            gameState===GAME_STATE.PLAYING
+        ){
+            playBGM();
+        }
+
+    }else{
+
+        stopBGM();
+
+    }
 
 }
 
@@ -89,7 +106,14 @@ function playSE(name){
 // BGM再生
 function playBGM(){
 
-    if(!soundEnabled){
+    if(
+        !soundEnabled ||
+        !BGM_ENABLED
+    ){
+        return;
+    }
+
+    if(window.gameBGM){
         return;
     }
 
@@ -121,5 +145,7 @@ function stopBGM(){
     window.gameBGM.pause();
 
     window.gameBGM.currentTime=0;
+
+    window.gameBGM=null;
 
 }
