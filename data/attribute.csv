@@ -1,6 +1,6 @@
 id,name,weight,evadeRate
 rookie,新入蚊,5,0.05
-mobile,モビル蚊,8,0.20
+mobile,モビル蚊,10,0.20
 zawa,ざわ…蚊,10,0.05
 jojo,奇妙な蚊,10,0.10
 korea,한류蚊,5,0.08
@@ -13,5 +13,6 @@ hokuto,北斗の蚊,5,0.10
 gourmet,グルメ蚊,5,0.04
 kansai,関西蚊,5,0.05
 deathnote,死神蚊,5,0.13
-boxer,拳闘蚊,8,0.18
+boxer,拳闘蚊,5,0.18
 medical,医療蚊,5,0.07
+oshi,推しの蚊,5,0.05
