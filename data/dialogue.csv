@@ -304,7 +304,7 @@ itadaki,complete,またお願いしたいです♡
 hokuto,spawn,水だ！！
 hokuto,spawn,血液もタップリある！
 hokuto,spawn,YouはShock！
-hokuto,spawn,俺の名を言ってみろ！
+hokuto,spawn,私の名を言ってみろ！
 hokuto,spawn,覚悟するんだな！
 hokuto,spawn,汚物は消毒だ！
 hokuto,spawn,お前の血は何色だ！
@@ -568,7 +568,6 @@ kimetsu,sucking,血をいただく！
 kimetsu,complete,全集中の吸血！
 kimetsu,complete,今日は私の勝ちだ！
 kimetsu,complete,血の味がする……！
-
 suiri,spawn,ん？妙だな……
 suiri,spawn,事件の匂いがする……
 suiri,spawn,犯人はあなたです！
@@ -578,7 +577,6 @@ suiri,spawn,実におもしろい
 suiri,spawn,現場を調べます！
 suiri,spawn,血液を調べれば分かる！
 suiri,spawn,逮捕状です！
-
 suiri,evade,じっちゃんの名にかけて！
 suiri,evade,真実はいつも１つ！
 suiri,evade,すべて、お見通しだ！
@@ -587,8 +585,6 @@ suiri,evade,証拠は残していない！
 suiri,evade,トリックは見破った！
 suiri,evade,動きは読めています！
 suiri,evade,これは想定外です！
-
-suiri,destroy,バーロー……
 suiri,destroy,まさか……！
 suiri,destroy,そんな馬鹿な……！
 suiri,destroy,証拠が……！
@@ -597,11 +593,9 @@ suiri,destroy,トリックが見破られた……！
 suiri,destroy,犯人は……私……？
 suiri,destroy,こんな殺蚊事件が……！
 suiri,destroy,真相は闇の中……！
-
 suiri,sucking,血液を採取します！
 suiri,sucking,重要な証拠です！
 suiri,sucking,これで真相に近づける！
-
 suiri,complete,事件は解決しました！
 suiri,complete,私の推理通りです！
 suiri,complete,真相をいただきました！
